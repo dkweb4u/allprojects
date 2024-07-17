@@ -1,0 +1,130 @@
+@media (min-width: 766px) and (max-width: 991px) {
+    .whychoose .featurebox{
+        width: 50%;
+    }
+}
+@media  (max-width: 765px) {
+    .whychoose .featurebox{
+        width: 100%;
+    }
+}
+@media  (min-width: 991.6px) {
+    header .menu{
+        display: none;
+    }
+
+    header nav ul li:hover ul{
+        max-height: 1000px;
+        transform: scale(1);
+        padding: 10px 0px;
+    
+    }
+    header nav ul li:hover i{
+        transform: rotate(-180deg);
+    }
+    .whychoose .featurebox p{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+}
+
+@media  (max-width: 991.5px) {
+    header .logo{
+        margin-left: 0;
+    }
+    .faq{
+        margin-bottom: 60px;
+    }
+
+    header .topbar{
+        display: none;
+    }
+    header nav{
+        align-items: flex-start;
+    }
+
+    header .menu{
+        display: block;
+        padding: 5px;
+    }
+
+
+    header nav ul li.active svg{
+        transform: rotate(-180deg);
+    }
+
+    header nav ul li.active ul{
+        max-height: 1000px !important;
+        transform: scale(1) !important;
+        padding: 10px 0px;
+    }
+    header .menu svg.close{
+        display: none;
+     }
+    header .menu.active svg.close{
+       display: block;
+    }
+    header .menu.active svg.open{
+        display: none;
+     }
+
+}
+
+@media  (min-width: 767.8px)  and  (max-width: 991.5px){
+    header  nav{
+      max-height: 0px;
+      transition: all 0.5s;
+      overflow: hidden;
+    }
+    header  nav.active {
+       max-height: 400px;
+       overflow: visible;
+       padding-bottom: 10px;
+
+    }
+    .o-sm-3{
+        order: 3;
+    }
+}
+@media  (max-width: 767.7px) {
+
+    .contact .map{
+        padding-top: 60px;
+    }
+ 
+    header nav ul{
+        flex-flow: column;
+    }
+    header nav ul li ul{
+        position: relative;
+        top: 0;
+    }
+    header nav > ul > li{
+        width: 100%;
+    }
+    header nav ul li.btncall {
+        margin-right: auto;
+        margin-left: 10px;
+        width: fit-content;
+    }
+    header  nav{
+        max-height: 0;
+        overflow: hidden;
+        height: auto;
+        transition: all 0.5s;
+    }
+    header  nav.active {
+        max-height: 250px;
+        overflow: auto;
+        padding-bottom: 10px;
+    }
+    .room-page .gridbox .grid-item:nth-child(2) {
+        grid-row: 3;
+    }
+    .room-page .gridbox {
+        grid-template-columns: auto auto;
+    }
+}

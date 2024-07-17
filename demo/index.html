@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+
+<body>
+
+
+  <main>
+    <section class="home-slider">
+
+      <div class="itembox">
+        <div class="item bg1">
+          <div class="content">
+            <a href="#" target="_blank">IT, Web, Marketing solutions</a>
+          </div>
+        </div>
+          <!-- item end -->
+
+          <div class="item bg2">
+            <div class="content">
+              <a href="#" target="_blank">Entertainment &  Movies</a>
+            </div>
+          </div>
+
+          <!-- item end -->
+          <div class="item bg3">
+            <div class="content">
+              <a href="#" target="_blank">Institutions & Trainings</a>
+            </div>
+          </div>
+          <!-- item end -->
+
+
+
+
+        </div>
+        </section>
+  </main>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: true,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+    
+    });
+  </script>
+</body>
+
+</html>

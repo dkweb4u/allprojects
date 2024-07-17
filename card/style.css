@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
+main{
+    background-image: linear-gradient(to right, #7b6ffe, #f1b6c6);
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding:30px 20px;
+}
+.employee{
+    max-width: 350px;
+    width: 100%;
+    margin: 20px auto 40px;
+}
+.employee {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.employee .card  .logo{
+    padding: 20px 15px 0px;
+}
+.employee .card {
+    background: #fff;
+}
+.employee .card .card-middle .img{
+    padding: 2px 10px 5px;
+    background-image: linear-gradient(to bottom, #fff 50%, #6071ee 50% );
+}
+.employee .card .card-middle,
+.employee .card .card-footer{
+background: #6071ee;
+}
+.employee .card .card-middle .text{
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+}
+.employee .card .card-middle .text  h4,
+.employee .card .contact-info h4{
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.employee .card .card-middle .text  h4 p{
+    font-size: 18px;
+    line-height: 24px;
+}
+.employee .card .card-middle .img img{
+width: 150px;
+height: 150px;
+display: block;
+margin: auto;
+border-radius: 50%;
+aspect-ratio: 1;
+overflow: hidden;
+padding: 10px;
+background: #fff;
+object-fit: cover;
+object-position: top;
+box-shadow: 1px 1px 6px 2px #0005;
+}
+.employee .card .card-footer {
+    padding: 5px 15px 20px;
+}
+.employee .card .card-footer .links ul,
+.employee .card .card-footer .products ul,
+.employee .card .card-footer .tab-content ul{
+padding: 0;
+list-style-type: none;
+margin: 0;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 15px;
+font-weight: 500;
+
+}
+.employee .card .card-footer .products ul{
+    padding-bottom: 5px;
+}
+.employee .card .card-footer .products ul,
+.employee .card .card-footer .tab-content ul{
+    padding-top: 20px;
+}
+.employee .card .card-footer  li.active {
+    border: 1px solid #fff;
+    padding: 6px 15px;
+    border-radius: 30px;
+}
+.employee .card .card-footer hr {
+margin-top: 25px;
+}
+.employee .card .card-footer .tab-content ul{
+transform: scale(0);
+transform-origin: top ;
+transition: all 0.5s;
+overflow: hidden;
+max-height: 0;
+}
+.employee .card .card-footer .tab-content ul.active{
+transform: scale(1);
+max-height: 1500px;
+}
+.employee .card .card-footer .tab-content ul + ul{
+    padding-top: 0;
+}
+.employee .card .card-footer .products ul li{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.employee .card .card-footer .tab-content a,
+.employee .card .card-footer .links a{
+    padding: 7px 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #6071ee;
+}
+.employee .card .card-footer .tab-content a svg,
+.employee .card .card-footer .links a svg{
+margin-right: 5px;
+fill: #6071ee;
+transition: all 0.5s;
+}
+.employee .card .card-footer .tab-content a:hover svg,
+.employee .card .card-footer .links a:hover svg{
+    transform: translateX(-10px) rotate(360deg);
+
+}
+.employee .card .contact-info h4{
+    color: #fff;
+    margin-top: 20px;
+}
+.employee .card .contact-info  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.employee .card .contact-info  ul a{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    flex-flow: column;
+}
+.employee .card .contact-info  ul li{
+    margin-top: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 15px;
+}
+.employee .card .contact-info  ul li:last-child{
+    border-bottom: 0px solid #fff;
+    padding-bottom: 0px;
+}
+.employee .card .contact-info  ul a svg {
+    min-width: 36px;
+    height: 36px;
+    fill: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.employee .card .card-footer .products ul li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.employee .card .card-footer .products ul li input{
+appearance: none;
+border: 1px solid #fff;
+height: 10px;
+width: 10px;
+border-radius: 50%;
+}
+.employee .card .card-footer .products ul li.active input{
+background: #fff;
+}
