@@ -238,24 +238,8 @@ display: flex;
         chatbotbox.classList.add("active");
         chatbotmessageinput.focus();
 
-        let hour = date.getHours();
-        let minite = date.getMinutes();
+        getwpchatbotTime();
 
-        if(hour > 12){
-            hour = hour - 12;
-        }
-
-        if(hour < 10){
-            hour = "0"+ hour.toString();
-        }
-
-        if(minite < 10){
-            minite = "0"+ minite.toString();
-        }
-
-
-
-        ctime.textContent = hour + ":" + minite ;
     });
 
     chatbotclose.addEventListener("click",()=>{
@@ -271,6 +255,37 @@ display: flex;
      }
      chatbotform.submit();
     });
+
+    window.addEventListener("load",()=>{
+
+        if(window.innerWidth < 765){
+            chatbotContainer.classList.remove("active");
+            chatbotbox.classList.remove("active");
+        }
+
+        getwpchatbotTime();
+
+    });
+
+    function getwpchatbotTime(){
+
+        let hour = date.getHours();
+        let minite = date.getMinutes();
+
+        if(hour > 12){
+            hour = hour - 12;
+        }
+
+        if(hour < 10){
+            hour = "0"+ hour.toString();
+        }
+
+        if(minite < 10){
+            minite = "0"+ minite.toString();
+        }
+
+        ctime.textContent = hour + ":" + minite;
+    }
     
 
 </script>
