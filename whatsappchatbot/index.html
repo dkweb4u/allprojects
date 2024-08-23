@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp bot</title>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 766px) {
+    .whatsapp-chatbot-container{
+        --wpchatbot-height: 300px;
+        --wpchatbot-maxwidth: 300px;
+        --wpchatbot-input-height: 36px;
+        --wpicon-size: 36px;
+       --wpchatbot-trigger-icon: 54px;
+       --wpchatbot-position: 30px;
+    }
+}
+@media (max-width: 765px) {
+    .whatsapp-chatbot-container{
+        --wpchatbot-height: 300px;
+        --wpchatbot-maxwidth: 250px;
+        --wpchatbot-input-height: 30px;
+        --wpicon-size: 36px;
+        --wpchatbot-trigger-icon: 45px;
+        --wpchatbot-position: 15px;
+    }
+
+}
+
+    .whatsapp-chatbot-container{
+        width: fit-content;
+        position: fixed;
+        bottom: var(--wpchatbot-position);
+        right: var(--wpchatbot-position);
+    }
+    .whatsapp-chatbot-container .whatsapp-box{
+      height: var(--wpchatbot-height);
+      max-width: var(--wpchatbot-maxwidth);
+        width: 100%;
+        background-size:contain ;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-bottom: 5px;
+
+    }
+    .whatsapp-chatbot-container .iocn{
+        height: var(--wpicon-size);
+        width: var(--wpicon-size);
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .whatsapp-chatbot-container  .topbar{
+        padding:5px 10px;
+        background-image: linear-gradient(45deg, #2cb740,#54d062);
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+    .whatsapp-chatbot-container  .topbar .title{
+        margin: 0px 10px 2px;
+    }
+    .whatsapp-chatbot-container   .topbar .title h5{
+        color: #fff;
+        font-size: 16px;    
+        margin: 0;    
+    }
+    .whatsapp-chatbot-container  .topbar .title .time{
+         color: #fff;
+         font-size: 12px;
+        margin: 0;    
+     position: relative;
+     z-index: 2;
+    }
+    .whatsapp-chatbot-container  .bottom{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding:5px;
+        z-index: 2;
+
+    }
+    .whatsapp-chatbot-container  .bottom .wp-chat-btn{
+        height: var(--wpicon-size);
+        width: var(--wpicon-size);
+        margin-left: 5px;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position:top 6px center;
+        border-radius: 50%;
+        background-color: #2cb740;
+        border-color: transparent;
+        outline: none;
+        cursor: pointer;
+    }
+    .whatsapp-chatbot-container   .bottom input{
+       width: calc(100% - 30px) !important;
+       border-radius: 100px;
+       outline: none;
+       border: 1px solid #0003;
+       padding: 5px 10px;
+       color: #000;
+       height: var(--wpchatbot-input-height);
+    }
+
+    .whatsapp-chatbot-container .text {
+    background: #fff;
+    padding: 8px 8px 2px;
+    border-radius: 5px;
+    margin-left: 15px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(80%);
+
+}
+.whatsapp-chatbot-container .text::before{
+    content: '';
+    height: 10px;
+    width: 15px;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    background-image: linear-gradient(45deg,#0000 50%,#fff 50%);
+}
+.whatsapp-chatbot-container   .ctime{
+    text-align: right;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+    margin: 5px 0px 3px;
+}
+
+.whatsapp-chatbot-container   .whatsapp-box.active  .text{
+  animation: whatsapp-chatboct-fadeup 1.1s forwards ease-out;
+}
+.whatsapp-chatbot-container  .whatsicon{
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+    user-select: none;
+}
+.whatsapp-chatbot-container  .whatsicon img{
+    max-width: var(--wpchatbot-trigger-icon);
+    margin: 5px;
+}
+
+@keyframes whatsapp-chatboct-fadeup {
+    100%{
+
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+
+.whatsapp-chatbot-container.active .whatsicon .open-btn{
+display: none;
+}
+.whatsapp-chatbot-container .whatsicon .close-btn,
+.whatsapp-chatbot-container .whatsapp-box{
+display: none;
+}
+
+.whatsapp-chatbot-container .whatsicon .open-btn{
+display: flex;
+}
+
+.whatsapp-chatbot-container.active .whatsicon .close-btn,
+.whatsapp-chatbot-container.active .whatsapp-box{
+    display: flex;
+}
+
+
+
+</style>
+    
+</head>
+<body>
+
+    <div class="whatsapp-chatbot-container">
+     
+        <div class="whatsapp-box" style="background: url('whatsapp.png');">
+
+            <div class="topbar">
+                <div class="iocn" style="background-image: url('logo.png');"></div>
+               <div class="title">
+                <h5>Isaral</h5>
+                <div class="time">Online</div>
+               </div>
+            </div>
+    
+            <div class="text">Hi 👋 <br>
+                How can help you? <br> <div class="ctime">12:55</div></div>
+    
+    
+            <form action="https://api.whatsapp.com/send" target="_blank" class="bottom formchatbot">
+                <input type="hidden" value="917353314466" name="phone">
+                <input type="text" value="" name="text" class="message" placeholder="Message">
+                <button class="wp-chat-btn" style="background-image: url('send.png');"></button>
+             </form>
+    
+        </div>
+
+        <div class="whatsicon"><img src="whatsicon.png" class="open-btn" alt="">
+            <img src="closeicon.png" class="close-btn" alt="">
+        </div>
+
+    </div>
+
+
+<script>
+    let chatbotContainer = document.querySelector(" .whatsapp-chatbot-container");
+    let chatbotbox = document.querySelector(" .whatsapp-chatbot-container .whatsapp-box");
+    let chatbotopen = document.querySelector(" .whatsapp-chatbot-container .open-btn");
+    let chatbotclose = document.querySelector(" .whatsapp-chatbot-container .close-btn");
+    let chatbotmessageinput = document.querySelector(" .whatsapp-chatbot-container .message");
+    let chatbotform = document.querySelector(" .whatsapp-chatbot-container .formchatbot");
+    let ctime = document.querySelector(" .whatsapp-chatbot-container .ctime");
+
+
+
+
+    chatbotopen.addEventListener("click",()=>{
+        let date = new Date();
+        chatbotContainer.classList.add("active");
+        chatbotbox.classList.add("active");
+        chatbotmessageinput.focus();
+
+        let hour = date.getHours();
+        let minite = date.getMinutes();
+
+        if(hour > 12){
+            hour = hour - 12;
+        }
+
+        if(hour < 10){
+            hour = "0"+ hour.toString();
+        }
+
+        if(minite < 10){
+            minite = "0"+ minite.toString();
+        }
+
+
+
+        ctime.textContent = hour + ":" + minite ;
+    });
+
+    chatbotclose.addEventListener("click",()=>{
+        chatbotContainer.classList.remove("active");
+        chatbotbox.classList.remove("active");
+   
+    });
+
+    chatbotform.addEventListener("submit",(e)=>{
+     e.preventDefault();
+     if(chatbotmessageinput.value ==''){
+        chatbotmessageinput.value = "Hi"
+     }
+     chatbotform.submit();
+    });
+    
+
+</script>
+
+
+</body>
+</html>

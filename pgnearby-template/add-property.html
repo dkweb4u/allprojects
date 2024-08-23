@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGnearby</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/fav.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="logo">
+              <div class="text"><a href="/"> PGNearBY </a></div>
+              <div class="action-icon">
+                <img
+                  src="assets/images/action-icons/menu.png"
+                  class="open"
+                  alt=""
+                />
+                <img
+                  src="assets/images/action-icons/close.png"
+                  class="close"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <nav>
+              <ul>
+                <li>
+                  <a href="add-property.html" class="thm-btn thm1 tx-1">
+                    <i
+                      ><img src="assets/images/action-icons/user.png" alt=""
+                    /></i>
+                    Post Your Property</a
+                  >
+                </li>
+                <li><a href="register.html" class="thm-btn thm1 tx-1"> Users</a></li>
+                <li>
+                  <a href="showproperty.html" class="thm-btn thm1 tx-1"> Our Properties</a>
+                </li>
+                <li><a href="login.html" class="thm-btn thm1 tx-1"> LogOut</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- admin page -->
+    <section class="addproperty-page ptb-70">
+      <div class="container">
+        <div class="property">
+          <!-- add property -->
+      
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+              <form
+                action="functions/action.php"
+                method="post"
+                class="addproperty"
+                enctype="multipart/form-data"
+              >
+                <h2 class="text-center">Add Your Property</h2>
+
+                <div class="step ">
+                  <div class="row">
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Select Property Type</div>
+                      <div class="check">
+                        <label>
+                          <span>Residential Building</span>
+                          <input
+                            type="radio"
+                            name="propertytype"
+                            class="form-check-input"
+                            id=""
+                            value="Residential Building"
+                        /></label>
+
+                        <label>
+                          <span>Commercial Building</span>
+                          <input
+                            type="radio"
+                            name="propertytype"
+                            class="form-check-input"
+                            id=""
+                            value="Commercial Building"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Looking For</div>
+                      <div class="check">
+                        <label>
+                          <span>Admissions</span>
+                          <input
+                            type="radio"
+                            name="needpg"
+                            class="form-check-input"
+                            id=""
+                            value="Admissions"
+                        /></label>
+
+                        <label>
+                          <span>Sell</span>
+                          <input
+                            type="radio"
+                            name="needpg"
+                            class="form-check-input"
+                            id=""
+                            value="Sell"
+                        /></label>
+
+                        <label>
+                          <span>Purchase</span>
+                          <input
+                            type="radio"
+                            name="needpg"
+                            class="form-check-input"
+                            id=""
+                            value="Purchase"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------ -->
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <label
+                        >Enter the PG Name <span class="cl-red">*</span></label
+                      >
+                      <input
+                        type="text"
+                        name="pname"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+                    <!-- ------------------------------------------------------------------------- -->
+
+                    <div class="col-lg-12">
+                      <div class="label text-center">Add Address</div>
+                    </div>
+
+                    <div class="col-lg-6 mt-2 mb-2">
+                      <select name="state" id="" class="form-select">
+                        <option value="Karnataka">Karnataka</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 mt-2 mb-2">
+                      <div class="input">
+                        <select name="city" id="fetchcity" class="form-select">
+                          <option value="">Select City</option>                        
+                          <option value="Vijayapura (Bijapur)">
+                            Vijayapura (Bijapur)
+                          </option>
+                          <option value="Yadgir">Yadgir</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-2 mb-2">
+                      <div class="input">
+                        <select name="area" id="fetcharea" class="form-select">
+                          <option value="" selected="true">Select area</option>
+                          <option value="Herkal">Herkal</option>
+                          <option value="Yandigeri">Yandigeri</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-2 mb-2">
+                      <div class="input">
+                        <input
+                          type="text"
+                          name="address"
+                          class="form-control"
+                          placeholder="Address"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------------------------------------- -->
+                  </div>
+                  <div class="btnbox">
+                    <div class="thm-btn next" val="1">Next</div>
+                  </div>
+                </div>
+
+                <!-- step end -->
+
+                <div class="step ">
+                  <div class="row">
+                    <div class="col-lg-12 mt-2">
+                      <div class="text-center"><h5>PG Details</h5></div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">
+                        PG is for <span class="cl-red">*</span>
+                      </div>
+                      <div class="check">
+                        <label>
+                          <img src="assets/images/icons/Men.png" alt="" />
+                          <span>Men</span>
+                          <input
+                            type="radio"
+                            name="pgtype"
+                            class="form-check-input"
+                            id=""
+                            value="Men"
+                          />
+                        </label>
+
+                        <label>
+                          <img src="assets/images/icons/Women.png" alt="" />
+                          <span>Women</span>
+                          <input
+                            type="radio"
+                            name="pgtype"
+                            class="form-check-input"
+                            id=""
+                            value="Women"
+                          />
+                        </label>
+
+                        <label>
+                          <img
+                            src="assets/images/icons/Co living.png"
+                            alt=""
+                          />
+                          <span>Co living</span>
+                          <input
+                            type="radio"
+                            name="pgtype"
+                            class="form-check-input"
+                            id=""
+                            value="Co living"
+                          />
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Suitable for</div>
+                      <div class="check">
+                        <label>
+                          <span>Professional</span>
+                          <input
+                            type="radio"
+                            name="suitable"
+                            class="form-check-input"
+                            id=""
+                            value="Professional"
+                        /></label>
+
+                        <label>
+                          <span>Students</span>
+                          <input
+                            type="radio"
+                            name="suitable"
+                            class="form-check-input"
+                            id=""
+                            value="Students"
+                        /></label>
+
+                        <label>
+                          <span>Both</span>
+                          <input
+                            type="radio"
+                            name="suitable"
+                            class="form-check-input"
+                            id=""
+                            value="Both"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------ -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Meals Available</div>
+                      <div class="check input-trigger-container">
+                        <label
+                          ><span>Yes</span
+                          ><input
+                            type="radio"
+                            name="meals[]"
+                            value="Yes"
+                            
+                        /></label>
+
+                        <label
+                          ><span>No</span
+                          ><input type="radio" name="meals[]" value="No"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2  ">
+                      <div class="check">
+                        <label>
+                          <span>Pure Veg</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Pure Veg"
+                        /></label>
+
+                        <label>
+                          <span>Veg &amp; Non-Veg</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Veg &amp; Non-Veg"
+                        /></label>
+
+                        <label>
+                          <span>Special At</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Special At"
+                        /></label>
+
+                        <label>
+                          <span>South Indian</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="South Indian"
+                        /></label>
+
+                        <label>
+                          <span>North Indian</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="North Indian"
+                        /></label>
+
+                        <label>
+                          <span>Andhra</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Andhra"
+                        /></label>
+
+                        <label>
+                          <span>Kerala</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Kerala"
+                        /></label>
+
+                        <!-- --------------------- -->
+                        <label class="otherfood">
+                          <span>Others</span>
+                          <input
+                            type="checkbox"
+                            name="meals[]"
+                            class="form-check-input"
+                            id=""
+                            value="Others"
+                          />
+                        </label>
+
+                        <div class="col-lg-12 mt-2 mb-2 otherfood-val hide">
+                          <span>Add food seperated by camma (,)</span>
+                          <input
+                            type="text"
+                            name="meals[]"
+                            class="form-control"
+                            placeholder="Add food"
+                          />
+                        </div>
+                        <!-- --------------------- -->
+                      </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+                    <div class="col-lg-6 col-sm-6 mt-2 mb-2">
+                      <input
+                        type="text"
+                        name="nperiod"
+                        class="form-control"
+                        placeholder="Notice period days"
+                      />
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 mt-2 mb-2">
+                      <input
+                        type="text"
+                        name="locknperiod"
+                        class="form-control"
+                        placeholder="Lock in period days"
+                      />
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Common areas</div>
+                      <div class="check">
+                        <label>
+                          <span>Lobby</span>
+                          <input
+                            type="checkbox"
+                            name="comonarea[]"
+                            class="form-check-input"
+                            id=""
+                            value="Lobby"
+                        /></label>
+
+                        <label>
+                          <span>Hall</span>
+                          <input
+                            type="checkbox"
+                            name="comonarea[]"
+                            class="form-check-input"
+                            id=""
+                            value="Hall"
+                        /></label>
+
+                        <label>
+                          <span>option 3</span>
+                          <input
+                            type="checkbox"
+                            name="comonarea[]"
+                            class="form-check-input"
+                            id=""
+                            value="option 3"
+                        /></label>
+
+                        <label>
+                          <span>option 4</span>
+                          <input
+                            type="checkbox"
+                            name="comonarea[]"
+                            class="form-check-input"
+                            id=""
+                            value="option 4"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------ -->
+                  </div>
+
+                  <div class="btnbox">
+                    <div class="thm-btn back" val="0">Back</div>
+                    <div class="thm-btn next" val="2">Next</div>
+                  </div>
+                </div>
+
+                <!-- step end -->
+
+                <div class="step ">
+                  <div class="row">
+                    <div class="col-lg-12 mt-2">
+                      <div class="text-center">
+                        <h5>Owner / Caretaker details</h5>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Property Managed by</div>
+                      <div class="check">
+                        <label>
+                          <span>Landlord</span>
+                          <input
+                            type="checkbox"
+                            name="pgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="Landlord"
+                        /></label>
+
+                        <label>
+                          <span>PG owner</span>
+                          <input
+                            type="checkbox"
+                            name="pgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="PG owner"
+                        /></label>
+
+                        <label>
+                          <span>Caretaker / manager</span>
+                          <input
+                            type="checkbox"
+                            name="pgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="Caretaker / manager"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------ -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Who stays at property</div>
+                      <div class="check">
+                        <label>
+                          <span>Landlord</span>
+                          <input
+                            type="checkbox"
+                            name="staypgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="Landlord"
+                        /></label>
+
+                        <label>
+                          <span>PG owner</span>
+                          <input
+                            type="checkbox"
+                            name="staypgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="PG owner"
+                        /></label>
+
+                        <label>
+                          <span>Caretaker / manager</span>
+                          <input
+                            type="checkbox"
+                            name="staypgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="Caretaker / manager"
+                        /></label>
+
+                        <label>
+                          <span>No One stays</span>
+                          <input
+                            type="checkbox"
+                            name="staypgowner[]"
+                            class="form-check-input"
+                            id=""
+                            value="No One stays"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------------ -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">PG Rules</div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="check">
+                        <label>
+                          <span>Non veg allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input"
+                            id=""
+                            value="Non veg allowed"
+                        /></label>
+
+                        <label>
+                          <span>visitors allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input"
+                            id=""
+                            value="visitors allowed"
+                        /></label>
+
+                        <label>
+                          <span>Gaurdian allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input"
+                            id=""
+                            value="Gaurdian allowed"
+                        /></label>
+
+                        <label>
+                          <span>Smoking allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input"
+                            id=""
+                            value="Smoking allowed"
+                        /></label>
+
+                        <label>
+                          <span>Drinking allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input"
+                            id=""
+                            value="Drinking allowed"
+                        /></label>
+
+                        <!-- --------------------- -->
+                        <label class="anytime">
+                          <span>Anytime allowed</span>
+                          <input
+                            type="checkbox"
+                            name="pgrules[]"
+                            class="form-check-input "
+                            id=""
+                            value="Anytime allowed"
+                          />
+                        </label>
+
+                        <div
+                          class="col-lg-12 mt-2 mb-2 anytime-val hide"
+                        >
+                          <div class="check">
+                            <div class="d-flex">
+                              <label class="yes"
+                                ><span>Yes</span
+                                ><input
+                                  type="radio"
+                                  name="meetallow[]"
+                                  value="Yes"
+                              /></label>
+
+                              <label  class="no"
+                                ><span>No</span
+                                ><input
+                                  type="radio"                                  
+                                  name="meetallow[]"
+                                  value="No"
+                              /></label>
+                            </div>
+                          </div>
+
+                          <div class="mt-2 yes-val hide">
+                            <div class="check">
+                              <label
+                                >Last Time
+                                <input
+                                  type="time"
+                                  name="meetallow[]"
+                                  class="form-control"
+                              /></label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- --------------------- -->
+                      </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Opposite sex allowed</div>
+                      <div class="check">
+                        <label
+                          ><span>Yes</span
+                          ><input type="radio" name="oppallowed" value="Yes"
+                        /></label>
+
+                        <label
+                          ><span>No</span
+                          ><input
+                            type="radio"
+                            class="form-control "
+                            name="oppallowed"
+                            value="No"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- -------------------------------------------------------------------------------------------------- -->
+                  </div>
+
+                  <div class="btnbox">
+                    <div class="thm-btn back" val="1">Back</div>
+                    <div class="thm-btn next" val="3">Next</div>
+                  </div>
+                </div>
+
+                <!-- step end -->
+
+                <div class="step active">
+                  <div class="row">
+                    <div class="col-lg-12 mt-2">
+                      <div class="text-center"><h5>Room Details:</h5></div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="newroomsec">
+                        <div class="room">
+                          <div class="row mt-2">
+                            <div class="col-lg-12">
+                              <h6 class="text-center">Room</h6>
+                            </div>
+
+                            <div class="col-lg-12 mt-2 mb-2">
+                              <div class="label text-center">Private room</div>
+                              <div class="check sharingtype">
+                                <label>
+                                  <span>1 sharing</span>
+                                  <input
+                                    type="radio"
+                                    name="bedtype[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="1 sharing"
+                                /></label>
+
+                                <label>
+                                  <span>2 sharing</span>
+                                  <input
+                                    type="radio"
+                                    name="bedtype[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="2 sharing"
+                                /></label>
+
+                                <label>
+                                  <span>3 sharing</span>
+                                  <input
+                                    type="radio"
+                                    name="bedtype[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="3 sharing"
+                                /></label>
+
+                                <label>
+                                  <span>4 sharing</span>
+                                  <input
+                                    type="radio"
+                                    name="bedtype[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="4 sharing"
+                                /></label>
+
+                                <label>
+                                  <span>4+ sharing</span>
+                                  <input
+                                    type="radio"
+                                    name="bedtype[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="4+ sharing"
+                                /></label>
+
+                                <input
+                                  type="hidden"
+                                  name="bedtype[]"
+                                  class="form-check-input"
+                                  id=""
+                                  value="endroom"
+                                />
+                              </div>
+                            </div>
+
+                            <!-- -------------------------------------------------------------------------------------------- -->
+
+                            <div class="col-lg-4 col-sm-6 mt-2 mb-2">
+                              <label>
+                                Total beds in room <span class="cl-red">*</span>
+                              </label>
+                              <input
+                                type="number"
+                                name="numrooms[]"
+                                class="form-control"
+                                value="0"
+                                required=""
+                              />
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 mt-2 mb-2">
+                              <label
+                                >Rent per month
+                                <span class="cl-red">*</span></label
+                              >
+                              <input
+                                type="number"
+                                name="rentroom[]"
+                                class="form-control"
+                                value="0"
+                                required=""
+                              />
+                            </div>
+
+                            <div class="col-lg-4 col-sm-6 mt-2 mb-2">
+                              <label
+                                >Security deposit
+                                <span class="cl-red">*</span></label
+                              >
+                              <input
+                                type="number"
+                                name="depositroom[]"
+                                class="form-control"
+                                value="0"
+                                required=""
+                              />
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mt-2 mb-2">
+                              <label
+                                >Maintenance charges per month
+                                <span class="cl-red">*</span></label
+                              >
+
+                              <input
+                                type="number"
+                                name="maintenance[]"
+                                class="form-control"
+                                value="0"
+                                required=""
+                              />
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mt-2 mb-2">
+                              <label
+                                >Other charges
+                                <span class="cl-red">*</span></label
+                              >
+
+                              <input
+                                type="number"
+                                name="othercharges[]"
+                                class="form-control"
+                                value="0"
+                                required=""
+                              />
+                            </div>
+
+                            <!-- -------------------------------------------------------------------------------------------------------- -->
+
+                            <div class="col-lg-12 mt-2 mb-2">
+                              <div class="label text-center">
+                                Facilities offered
+                              </div>
+                              <div class="check">
+                                <label>
+                                  <span>AC</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="AC"
+                                /></label>
+
+                                <label>
+                                  <span>TV</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="TV"
+                                /></label>
+
+                                <label>
+                                  <span>Cupboard</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Cupboard"
+                                /></label>
+
+                                <label>
+                                  <span>Table</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Table"
+                                /></label>
+
+                                <label>
+                                  <span>Chair</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Chair"
+                                /></label>
+
+                                <label>
+                                  <span>Balcony</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Balcony"
+                                /></label>
+
+                                <label>
+                                  <span>Attached bathroom</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Attached bathroom"
+                                /></label>
+
+                                <label>
+                                  <span>Common bathroom</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Common bathroom"
+                                /></label>
+
+                                <label>
+                                  <span>Meals</span>
+                                  <input
+                                    type="checkbox"
+                                    name="facilities[]"
+                                    class="form-check-input"
+                                    id=""
+                                    value="Meals"
+                                /></label>
+
+                                <input
+                                  type="hidden"
+                                  name="facilities[]"
+                                  class="form-check-input"
+                                  id=""
+                                  value="endroom"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-lg-12 text-center mt-2">
+                              <div class="btn btn-danger delete">Delete</div>
+                            </div>
+                          </div>                          
+                        </div>
+                      </div>
+                    </div>
+
+                    
+
+                    <!-- ender -->
+
+                    <!-- ------------------------------------------------------------------------------------------------------ -->
+
+                    <div class="col-lg-12">
+                      <div class="addroomformbtn thm-btn">Add Room</div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------------------------------------ -->
+                  </div>
+
+                  <div class="btnbox">
+                    <div class="thm-btn back" val="2">Back</div>
+                    <div class="thm-btn next" val="4">Next</div>
+                  </div>
+                </div>
+
+                <!-- step end -->
+
+                <div class="step ">
+                  <div class="row">
+                    <div class="col-lg-12 mt-2">
+                      <div class="text-center"><h5>Amenities</h5></div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Security</div>
+
+                      <div class="check">
+                        <label>
+                          <span>CCTV</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="CCTV"
+                        /></label>
+
+                        <label>
+                          <span>Gated community</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Gated community"
+                        /></label>
+
+                        <label>
+                          <span>Security</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Security"
+                        /></label>
+
+                        <label>
+                          <span>Biometric</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Biometric"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Furnish</div>
+
+                      <div class="check">
+                        <label>
+                          <span>Fridge</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Fridge"
+                        /></label>
+
+                        <label>
+                          <span>Washing machine</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Washing machine"
+                        /></label>
+
+                        <label>
+                          <span>M W</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="M W"
+                        /></label>
+
+                        <label>
+                          <span>WP</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="WP"
+                        /></label>
+
+                        <label>
+                          <span>Sports 1</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Sports 1"
+                        /></label>
+
+                        <label>
+                          <span>Sports 2</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Sports 2"
+                        /></label>
+
+                        <label>
+                          <span>Walker</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Walker"
+                        /></label>
+
+                        <label>
+                          <span>TV</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="TV"
+                        /></label>
+
+                        <label>
+                          <span>other 1</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="other 1"
+                        /></label>
+
+                        <label>
+                          <span>Other 2</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Other 2"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Services</div>
+
+                      <div class="check">
+                        <label>
+                          <span>Laundry</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Laundry"
+                        /></label>
+
+                        <label>
+                          <span>Housekeeping</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Housekeeping"
+                        /></label>
+
+                        <label>
+                          <span>Wifi</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Wifi"
+                        /></label>
+
+                        <label>
+                          <span>RO UV water</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="RO UV water"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <div class="label text-center">Top Amenities</div>
+
+                      <div class="check">
+                        <label>
+                          <span>Gym</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Gym"
+                        /></label>
+
+                        <label>
+                          <span>Lift</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Lift"
+                        /></label>
+
+                        <label>
+                          <span>24 hours water</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="24 hours water"
+                        /></label>
+
+                        <label>
+                          <span>2 wh parking</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="2 wh parking"
+                        /></label>
+
+                        <label>
+                          <span>4 wh parking</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="4 wh parking"
+                        /></label>
+
+                        <label>
+                          <span>power backup</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="power backup"
+                        /></label>
+
+                        <label>
+                          <span>Coffee /tea</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Coffee /tea"
+                        /></label>
+
+                        <label>
+                          <span>Snacks</span>
+                          <input
+                            type="checkbox"
+                            name="amenities[]"
+                            class="form-check-input"
+                            id=""
+                            value="Snacks"
+                        /></label>
+                      </div>
+                    </div>
+
+                    <!-- ------------------------------------------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2 mb-2">
+                      <hr />
+                      <label for="photos" class="mb-2">Add Photos</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        multiple=""
+                        name="pimg[]"
+                        accept="image/png,image/jpg,image/jpeg,image/webp"
+                        id="photos"
+                        required=""
+                      />
+                    </div>
+
+                    <!-- ----------------------------------------------------------------------- -->
+
+                    <div class="col-lg-12 mt-2">
+                      <button
+                        class="thm-btn"
+                        type="submit"
+                        name="addproperty"
+                      >
+                        Add Property
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="btnbox">
+                    <div class="thm-btn back" val="3">Back</div>
+                  </div>
+                </div>
+
+                <!-- step end -->
+              </form>
+            </div>
+          </div>
+          <!-- add property end -->
+        </div>
+      </div>
+    </section>
+
+    <!-- admin page -->
+    <footer>
+      <div class="container">
+        <p class="copy text-center">
+          © PGNearBy 2024. All Rights Reserved | Desigined and hosted by
+          <a href="https://isaral.in/" target="_blank"
+            >iSaral Business Solutions Pvt Ltd</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <!-- script -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+    <!-- script end -->
+  </body>
+</html>

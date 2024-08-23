@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGnearby</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/fav.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="logo">
+              <div class="text"><a href="/"> PGNearBY </a></div>
+              <div class="action-icon">
+                <img
+                  src="assets/images/action-icons/menu.png"
+                  class="open"
+                  alt=""
+                />
+                <img
+                  src="assets/images/action-icons/close.png"
+                  class="close"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <nav>
+              <ul>
+                <li>
+                  <a href="add" class="thm-btn thm1 tx-1">
+                    <i
+                      ><img src="assets/images/action-icons/user.png" alt=""
+                    /></i>
+                    Post Your Property</a
+                  >
+                </li>
+                <li><a href="add" class="thm-btn thm1 tx-1"> Users</a></li>
+                <li>
+                  <a href="add" class="thm-btn thm1 tx-1"> Our Properties</a>
+                </li>
+                <li><a href="add" class="thm-btn thm1 tx-1"> LogOut</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="search bg1">
+      <div class="container">
+        <h1 class="text-center">Get Your Perfect PG</h1>
+        <div class="searchbox">
+          <form action="/search">
+            <div class="row">
+              <div class="col-lg-4 col-sm-4">
+                <select name="pgtype" id="" class="form-select">
+                  <option value="">PG Type</option>
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+                  <option value="Co living">Co living</option>
+                </select>
+              </div>
+              <div class="col-lg-8 col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="search"
+                  placeholder="Search the address"
+                  name="address"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="filterbox">
+              <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                  <select name="state" id="" class="form-select" required="">
+                    <option value="Karnataka">Karnataka</option>
+                  </select>
+                </div>
+                <div class="col-lg-6  col-sm-6">
+                  <select name="city" id="fetchcity" class="form-select">
+                    <option value="">Select City</option>
+                    <option value="Uttara Kannada (Karwar)">
+                      Uttara Kannada (Karwar)
+                    </option>
+                    <option value="Vijayapura (Bijapur)">
+                      Vijayapura (Bijapur)
+                    </option>
+                    <option value="Yadgir">Yadgir</option>
+                  </select>
+                </div>
+                <div class="col-lg-6  col-sm-6">
+                  <select name="area" id="fetcharea" class="form-select">
+                    <option value="" selected="true">Select area</option>
+                    <option value="Bagalkot">Bagalkot</option>
+                    <option value="Anantapur">Anantapur</option>
+                    <option value="Asangi">Asangi</option>
+                  </select>
+                </div>
+                <div class="col-lg-6  col-sm-6">
+                  <select name="bedtype" id="" class="form-select">
+                    <option value="">Sharing Type</option>
+                    <option value="1 sharing">1 sharing</option>
+                    <option value="2 sharing">2 sharing</option>
+                    <option value="3 sharing">3 sharing</option>
+                    <option value="4 sharing">4 sharing</option>
+                    <option value="4+ sharing">4+ sharing</option>
+                  </select>
+                </div>
+                <div class="col-lg-12">
+                  <label class="fw-500">Budget and Amenities</label>
+                </div>
+                <div class="col-lg-4  col-sm-4">
+                  <span>min price:</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    min="2000"
+                    value="2000"
+                  />
+                </div>
+                <div class="col-lg-4  col-sm-4">
+                  <span>max price</span>
+                  <input type="number" class="form-control" min="2000" />
+                </div>
+                <div class="col-lg-4  col-sm-4">
+                  <span>Food Type:</span>
+                  <select name="meals" id="" class="form-select">
+                    <option value="">Food Type</option>
+                    <option value="Pure Veg">Pure Veg</option>
+                    <option value="Veg &amp; Non-Veg">Veg &amp; Non-Veg</option>
+                    <option value="Special At">Special At</option>
+                  </select>
+                </div>
+
+                <div class="col-lg-12">
+                  <div class="thm-btn cl-blue tr-top active" id="filter-show">
+                    Show More
+                    <i
+                      ><img
+                        src="assets/images/action-icons/up-arrow.png"
+                        alt=""
+                    /></i>
+                  </div>
+                  <div class="check">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="amenities[]"
+                        class="form-check-input"
+                        id=""
+                        value="CCTV"
+                      />
+                      CCTV</label
+                    >
+
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="amenities[]"
+                        class="form-check-input"
+                        id=""
+                        value="Gated community"
+                      />
+                      Gated community</label
+                    >
+
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="amenities[]"
+                        class="form-check-input"
+                        id=""
+                        value="Security"
+                      />
+                      Security</label
+                    >
+
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="amenities[]"
+                        class="form-check-input"
+                        id=""
+                        value="Snacks"
+                      />
+                      Snacks</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="thm-btn" type="submit">Search Now</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- property view -->
+
+    <section class="property">
+      <div class="container">
+        <h2>Results: <span class="c-green">7</span> </h2>
+        <div class="row">
+            <!-- start -->
+            <div class="col-lg-6">
+                <div class="property-view">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                            <div class="img">
+                              <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                                  <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                                  <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                                  <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                              </div>
+                            </div>
+                          </div>    
+                          <div class="col-lg-8  col-sm-8">
+                            <div class="content">
+                              <div class="top">
+                                <div class="lablebox">
+                                  <div class="label men">Men</div>
+                                  <div class="label women">Women
+                                  </div>
+                                  <div class="label coliving">  Co living</div>
+                                </div>
+                                <h3 class="head">Comfort PG</h3>
+                                <div class="price">
+                                  ₹&nbsp;1000<span class="amount">/onwords</span>
+                                </div>
+                                <div class="table-responsives">
+                                    <table class="table noborder">
+                                        <tbody>
+                                          <tr>
+                                            <td>Location</td>
+                                            <td>:</td>
+                                            <td>Karnataka, Bangalore</td>
+                                          </tr>                       
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <div class="table-responsives">
+                                    <table class="room-table table">
+                                        <tbody>
+                                          <tr>
+                                            <th>Rooms</th>
+                                            <th>Sharing</th>
+                                            <th>Rent</th>
+                                          </tr>
+                      
+                                          <tr>
+                                            <td>1</td>
+                                            <td>4 sharing,</td>
+                                            <td>5500</td>
+                                          </tr>
+                      
+                                          <tr>
+                                            <td>2</td>
+                                            <td>2 sharing,</td>
+                                            <td>1000</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                      
+                                </div>
+                                
+                
+                                <div class="btnbox">
+                                 
+                                    <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                    <a
+                                    href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                    class="thm-btn"
+                                    target="_blank"
+                                    >Whatsapp Now</a
+                                  >
+                                 
+                                 
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+            </div>
+            <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          <!-- start -->
+          <div class="col-lg-6">
+            <div class="property-view">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4">
+                        <div class="img">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="assets/images/bg/bg1.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="col-lg-8  col-sm-8">
+                        <div class="content">
+                          <div class="top">
+                            <div class="lablebox">
+                              <div class="label men">Men</div>
+                              <div class="label women">Women
+                              </div>
+                              <div class="label coliving">  Co living</div>
+                            </div>
+                            <h3 class="head">Comfort PG</h3>
+                            <div class="price">
+                              ₹&nbsp;1000<span class="amount">/onwords</span>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="table noborder">
+                                    <tbody>
+                                      <tr>
+                                        <td>Location</td>
+                                        <td>:</td>
+                                        <td>Karnataka, Bangalore</td>
+                                      </tr>                       
+                                    </tbody>
+                                  </table>
+                            </div>
+                            <div class="table-responsives">
+                                <table class="room-table table">
+                                    <tbody>
+                                      <tr>
+                                        <th>Rooms</th>
+                                        <th>Sharing</th>
+                                        <th>Rent</th>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>1</td>
+                                        <td>4 sharing,</td>
+                                        <td>5500</td>
+                                      </tr>
+                  
+                                      <tr>
+                                        <td>2</td>
+                                        <td>2 sharing,</td>
+                                        <td>1000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                  
+                            </div>
+                            
+            
+                            <div class="btnbox">
+                             
+                                <a href="property.php?id=45" class="thm-btn">More Info</a>
+                                <a
+                                href="https://api.whatsapp.com/send?phone=919986000554&amp;text=I'm%20interested%20in%20your%20property%20of%20p45"
+                                class="thm-btn"
+                                target="_blank"
+                                >Whatsapp Now</a
+                              >
+                             
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        </div>
+        <!-- end -->
+          
+
+
+<!-- pagenation -->
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+            </div>
+<!-- pagenation end -->
+           
+        </div>
+      </div>
+    </section>
+
+    <!-- property view end -->
+
+
+    <footer>
+        <div class="container">
+            <p class="copy text-center">
+                © PGNearBy 2024. All Rights Reserved |  Desigined and hosted by <a href="https://isaral.in/" target="_blank">iSaral Business Solutions Pvt Ltd</a>.
+              </p>
+        </div>
+    </footer>
+
+
+    <!-- script -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+    <!-- script end -->
+  </body>
+</html>

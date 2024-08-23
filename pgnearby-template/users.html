@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGnearby</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/fav.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="logo">
+              <div class="text"><a href="/"> PGNearBY </a></div>
+              <div class="action-icon">
+                <img
+                  src="assets/images/action-icons/menu.png"
+                  class="open"
+                  alt=""
+                />
+                <img
+                  src="assets/images/action-icons/close.png"
+                  class="close"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <nav>
+              <ul>
+                <li>
+                  <a href="add-property.html" class="thm-btn thm1 tx-1">
+                    <i
+                      ><img src="assets/images/action-icons/user.png" alt=""
+                    /></i>
+                    Post Your Property</a
+                  >
+                </li>
+                <li><a href="register.html" class="thm-btn thm1 tx-1"> Users</a></li>
+                <li>
+                  <a href="showproperty.html" class="thm-btn thm1 tx-1"> Our Properties</a>
+                </li>
+                <li><a href="login.html" class="thm-btn thm1 tx-1"> LogOut</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="users">
+      <div class="container">
+      <h2 class="text-center mt-5">Users</h2>
+  
+      <form action="" method="get" class="user-search">
+                 <div class="row">
+                  <div class="col-lg-2"></div>
+                  <div class="col-lg-5">
+                    <div class="input mt-3"> <input type="text" class="form-control" name="search"></div>                  
+                  </div>
+                  <div class="col-lg-3"><button type="submit" class="btn btn-success">Search</button></div>
+
+                 </div>
+              </form>
+  
+      <form action="functions/action.php" method="post">
+  
+  
+          <div class="table-responsive mt-3 mb-3">
+             
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+  <tr>
+      <td>1</td>
+      <td><input type="text" name="p1[]" class="form-control" value="Dinesh Kumar D"></td>
+      <td><input type="text" name="p1[]" class="form-control" value="07871751238"></td>
+      <td>dk@isaral.in</td>
+      <td> <select name="p1[]" id="" class="form-select">
+                  <option value="user">
+              User</option>
+                  <option value="admin" selected="">
+              Admin</option>
+                  <option value="agent">
+              Agent</option>
+              </select> </td>
+      <td><button class="btn btn-primary" type="submit" value="1" name="updateuser">Update</button></td>
+      <td>
+      
+      <button class="btn btn-danger" type="submit" value="1" onclick="return confirm('Are You Sure ?')" name="deleteuser">Delete</button>
+      </td>   
+      <td><a href="#">View</a></td>
+      
+  </tr>
+  
+  
+                </tbody>
+              </table>
+  
+  
+            </div></form>
+      </div>
+  </section>
+
+    <!-- admin page -->
+    <footer>
+      <div class="container">
+        <p class="copy text-center">
+          © PGNearBy 2024. All Rights Reserved | Desigined and hosted by
+          <a href="https://isaral.in/" target="_blank"
+            >iSaral Business Solutions Pvt Ltd</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <!-- script -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+    <!-- script end -->
+  </body>
+</html>

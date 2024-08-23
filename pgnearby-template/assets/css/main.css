@@ -1,0 +1,519 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --thm-gradient : linear-gradient(to right, #5072e6, #8d54e9);
+    --thm-1:#5072e6;
+    --thm-2:#8d54e9;
+    --thm-black:#000;
+    --thm-white:#f5f5f5;
+    --label-men:#8d54e9;
+    --label-woman:#f766ae;
+    --label-coloving: #fe8c68;
+    --light-green:#0dc042;
+}
+img{
+    max-width: 100%;
+}
+header{
+    background-image: var(--thm-gradient);
+}
+.action-icon img{
+    max-width: 30px;
+    cursor: pointer;
+}
+header{
+    padding: 10px;
+}
+header .logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+header .logo a{
+font-size: 24px;
+color: var(--thm-white);
+font-weight: 600;
+text-decoration: none;
+}
+
+header .logo .action-icon .close{
+    display: none;
+}
+header .logo .action-icon.active .open{
+    display: none;
+}
+header .logo .action-icon.active .close{
+    display: inline;
+}
+
+header .logo .action-icon{
+    margin: 5px 10px;
+}
+.thm-btn{
+display: flex;
+align-items: center;
+justify-content: center;
+width: fit-content;
+padding: 5px 10px;
+text-decoration: none;
+border-radius: 30px;
+font-weight: 500;
+outline: none;
+}
+.thm1{
+    border: 1px solid var(--thm-white);
+    color: var(--thm-white);
+}
+.thm-btn img{
+    max-width: 24px;
+}
+.tx-1:hover i{
+    transform: translateX(-5px);
+}
+.thm-btn i{
+    padding: 0px 5px;
+    transition: all 0.5s;
+}
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header nav ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+header nav ul li{
+    margin: 5px;
+    list-style: none;
+}
+.bg1{
+    background-image: url(../images/bg/bg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.search{
+    padding: 45px 0px;
+    background-position: top center;
+}
+.search .filterbox input,
+.search .filterbox textarea,
+.search .filterbox select{
+    border: 1px solid #0005;
+    cursor: pointer;
+}
+.fw-500{
+    font-weight: 500;
+}
+.searchbox{
+    max-width: 750px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+.search .filterbox{
+    background: #fff;
+    padding: 15px 15px 5px;
+    border-radius: 5px;
+}
+.searchbox div{
+    margin: 5px 0;
+}
+#filter-show{
+    cursor: pointer;
+}
+.cl-blue{
+    color: var(--thm-2);
+}
+#filter-show.active i{
+    transform: rotate(180deg);
+}
+#filter-show.active + .check{
+    display: none;
+}
+.searchbox .check label{
+    margin: 6px;
+    cursor: pointer;
+}
+.searchbox .check label input:checked{
+    background-color: var(--thm-2);
+    border-color: var(--thm-2);
+    box-shadow: none;
+}
+ form button{
+    border-color: transparent;
+    background: var(--thm-2);
+    color: var(--thm-white);
+    display: block;
+    margin: 15px auto;
+    outline: none !important;
+    padding: 8px 20px;
+}
+
+/* swiper */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+/* swiper end */
+.property .property-view{
+    margin: 15px auto;
+    box-shadow: 1px 1px 6px #0005;
+}
+.property .property-view .content .top .lablebox{
+    display: flex;
+    flex-wrap: wrap;
+}
+.property .property-view .content .top  .label{
+padding: 4px 15px;
+border-radius: 100px;
+margin: 5px 5px 10px;
+font-size: 12px;
+color: #fff;
+font-weight: 500;
+}
+.property .property-view .content .top  .label:first-child{
+    margin-left: 0px;
+}
+.men{
+    background: var(--label-men);
+}
+.women{
+    background: var(--label-woman);
+}
+.coliving{
+    background: var(--label-coloving);
+}
+.c-green{
+    color: green;
+}
+
+.property .property-view .content h3.head{
+font-size: 18px;
+}
+.property .property-view .content {
+    padding:5px 10px 10px;
+}
+.property .property-view .content .price{
+color: var(--thm-1);
+font-size: 20px;
+font-weight: 500;
+}
+.property .property-view .content  span.amount{
+    color: var(--thm-black);
+    font-size: 14px;
+}
+.property .property-view .content  table{
+    margin: 4px auto;
+}
+.property .property-view .content  table.room-table{
+    border: 1px solid #0005;
+}
+.noborder{
+    border-color: transparent;
+}
+.property .property-view .content .btnbox{
+display: flex;
+flex-wrap: wrap;
+}
+.table-responsives{
+    width: 100%;
+    overflow: auto;
+}
+.property .property-view .content .btnbox .thm-btn{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+}
+.property .property-view .content .btnbox .thm-btn:first-child{
+    background: var(--label-men);
+    margin: 5px;
+}
+.property .property-view .content .btnbox .thm-btn:last-child{
+    background: green;
+    margin: 5px;
+}
+.property .property-view  .img{
+display: flex;
+height: 100%;
+width: 100%;
+}
+.property .property-view  .swiper-pagination-bullet-active{
+    background: var(--thm-2);
+}
+.property{
+    padding: 45px 0px;
+}
+
+footer{
+    background-image: var(--thm-gradient);
+    padding: 10px 0px;
+}
+footer p{
+    margin-bottom: 0;
+    color: #fff;
+}
+footer p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul.pagination {
+    flex-wrap: wrap;
+}
+.mtb-30{
+    margin: 30px auto;
+}
+.login-form{
+    max-width: 350px;
+    box-shadow: 1px 1px 10px #0005;
+    padding:25px 15px 20px;
+    border-radius: 5px;
+}
+.login-form a{
+text-decoration: none;
+}
+.login-page{
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-page a{
+    font-weight: 500;
+}
+
+.login-page button{
+    border-radius: 100px;
+    padding: 8px 20px;
+}
+
+/* add property */
+.addproperty{
+    border: 1px solid #0001;
+    padding: 15px;
+    box-shadow: 1px 1px 10px #0005;
+}
+.addproperty .label{
+font-size: 18px;
+font-weight: 500;
+color: var(--thm-1);
+margin-bottom: 5px;
+}
+.addproperty .check {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.addproperty .check label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 6px #0005;
+    margin: 10px;
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.addproperty .check label:has(input:checked) {
+    background-color: #5072e6;
+}
+.addproperty .check label:has(input:checked) span {
+    color: #fff;
+}
+.addproperty .check label span {
+    display: block;
+    width: fit-content;
+}
+
+.addproperty .check label input[type=checkbox], .addproperty .check label input[type=radio] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.addproperty  .btnbox{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.addproperty  .btnbox .thm-btn{
+    background-color: var(--thm-2);
+    margin: 10px;
+    padding: 8px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.addproperty .step{
+display: none;
+}
+.addproperty .step.active{
+    display: block;
+}
+.cl-red{
+    color: #ff0000;
+}
+.addproperty .newroomsec .room{
+    padding: 15px;
+    border: 2px solid var(--thm-1);
+    margin: 20px auto;
+}
+.addproperty .newroomsec h6{
+    background: var(--light-green);
+    padding: 5px 10px;
+    display: block;
+    margin: 15px auto;
+    width: fit-content;
+    border-radius: 100px;
+    color: #fff;
+}
+.addproperty  .addroomformbtn{
+background: var(--thm-1);
+color: #fff;
+cursor: pointer;
+padding: 6px 20px;
+margin: 15px auto;
+}
+.addproperty .check label:has(input:checked) img {
+    filter: invert(1);
+}
+.addproperty .hide{
+    display: none;
+}
+.addproperty .newroomsec .room:first-child .delete{
+    display: none;
+}
+.breadcramb {
+    padding: 40px 0px 40px;
+    background-image: url(../images/bg/s2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
+}
+.breadcramb::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #0006;
+}
+.breadcramb  .head-title {
+    position: relative;
+    z-index: 2;
+}
+.breadcramb .title {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+.breadcramb ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+.breadcramb ul li {
+    margin: 5px;
+    font-weight: 500;
+    font-family: var(--thm-1);
+}
+.breadcramb ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.room-page {
+    padding: 60px 0px 20px;
+}
+.room-page .gridbox {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5px;
+    background: #fff;
+}
+.room-page .gridbox .grid-item:nth-child(1) {
+    grid-row: span 2;
+}
+.room-page .gridbox .grid-item a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    position: relative;
+    background: #fff;
+}
+.room-page .gridbox .grid-item a img {
+    object-fit: cover;
+}
+.room-page .gridbox .grid-item:nth-child(2) {
+    grid-column: span 2;
+}
+section.property-content .lablebox {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.property-content .lablebox .label {
+    margin: 10px 10px 10px 0px;
+    border-radius: 30px;
+    padding: 6px 10px;
+    color: #fff;
+    width: fit-content;
+}
+section.property-content .price {
+    color: #8d54e9;
+    font-size: 24px;
+    margin: 10px auto;
+    padding: 5px;
+    font-weight: bold;
+}
+.room-table {
+    border: 1px solid #0003;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+.whatsappbtn a{
+    padding: 6px 20px;
+    border-radius: 30px;
+    width: fit-content;
+    background: #008000;
+    color: #fff;
+    text-decoration: none;
+}
+section.property-content{
+    padding: 20px 0px 60px;
+}

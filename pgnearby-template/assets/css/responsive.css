@@ -1,0 +1,26 @@
+@media (min-width: 1199px) {
+    
+}
+@media (min-width: 991.6px){
+    header .logo .action-icon{
+        display: none;
+    }
+}
+@media (max-width: 991.5px) {
+    header .logo .action-icon{
+        display: inline;
+    }
+    header nav{
+        justify-content: center;
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    header nav.active{
+        padding: 15px 0px;
+        opacity: 1;
+        max-height: 300px !important;
+        overflow: visible;
+    }
+}
