@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating</title>
+
+    <style>
+        .demo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            border: 1px solid red;
+        }
+        .demo p{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: fit-content;
+            background: green;
+            color: #fff0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="demo"></div>
+
+    <script>
+        let demo = document.querySelector(".demo");
+
+for(let i=0; i<100; i++){
+
+
+    let k = 99-i;
+
+    let star = "";
+
+    for(let j=k; j<100; j++){
+
+        star += "*";
+
+    }
+
+    demo.innerHTML += `<p>${star}</p>`;
+
+    console.log(  demo);
+
+}
+
+    </script>
+
+</body>
+</html>

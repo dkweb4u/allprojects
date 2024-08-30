@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <script src="assets/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="javascript:void(0)"><h2 class="mx-2">Hotel</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="mynavbar">
+            <ul class="navbar-nav me-auto ">
+                <li class="nav-item ">
+                  <a class="nav-link "   href="/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="book-room.html">Book Room</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="rooms.html">Rooms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="bookings.html">Bookings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="updates.html">Updates</a>
+                </li>
+              </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-dark" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+
+  <main>
+<div class="updates my-5">
+  <div class="container">
+     <div class="row">
+      <div class="col-lg-6">
+        <form class="d-flex my-4">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+     </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>
+              S.No
+            </th>
+            <th>
+              Booking Id
+            </th>
+            <th>
+              Room Id
+            </th>
+            <th>Room Type</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+
+
+  </div>
+</div>
+
+  </main>
+
+
+<!-- scripts -->
+
+<script src="assets/js/template.js"></script>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

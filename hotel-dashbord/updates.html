@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <script src="assets/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="javascript:void(0)"><h2 class="mx-2">Hotel</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="mynavbar">
+            <ul class="navbar-nav me-auto ">
+                <li class="nav-item ">
+                  <a class="nav-link "   href="/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="book-room.html">Book Room</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="rooms.html">Rooms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="bookings.html">Bookings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="updates.html">Updates</a>
+                </li>
+              </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-dark" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+
+  <main>
+<div class="updates my-5">
+  <div class="container">
+     <ul class="tabs">
+      <li class="active">Room Types</li>
+      <li>Rate Type</li>
+      <li>Rooms</li>
+      <li>Services</li>
+     </ul>
+
+     <div class="contents">
+      <div class="item active">
+        <form action="#" class="form form-vertical">
+          <h4>Room Type:</h4>
+         
+
+          <div class="mb-3 mt-3">
+            
+
+              <div class="d-flex">
+                  <input type="text" class="form-control" id="check-in-date" name="check-in-date"> 
+              </div>
+           
+            </div>
+     
+
+            <div class="mb-3 mt-3 ">
+
+              <div class="btn btn-primary m-2">Add New</div>
+              
+              <button type="submit" class="btn btn-primary">Update</button>
+             
+            </div>
+
+      </form>
+      </div>
+
+      <div class="item ">
+        <form action="#" class="form form-vertical">
+
+          <h4>Rate Type:</h4>
+
+          <div class="mb-3 mt-3">
+            
+
+              <div class="d-flex">
+                  <input type="text" class="form-control" id="check-in-date" name="check-in-date"> 
+              </div>
+           
+            </div>
+     
+
+            <div class="mb-3 mt-3 ">
+
+              <div class="btn btn-primary m-2">Add New</div>
+              
+              <button type="submit" class="btn btn-primary">Update</button>
+             
+            </div>
+
+      </form>
+      </div>
+
+      <div class="item">
+        <form action="" class="my-3">
+
+          <div class="d-flex align-items-center">
+            <h4>Room 1:</h4>
+            <div class="btn btn-primary m-4">Add</div>
+          </div>
+          <div class="table-responsive ">
+
+           
+  
+         
+              <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>S.no</th>                     
+                        <th>Room Id</th>
+                        <th>Rate Type</th>
+                        <th>Adult</th>
+                        <th>Child</th>
+                         <th>Rate(Rs)</th>
+                         <th>Status</th>
+                         <th>Action</th>                     
+                      </tr>
+                    </thead>
+  
+  
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                    </tbody>
+  
+              </table>
+            
+           </div>
+
+           <button class="btn btn-primary">Save</button>
+        </form>
+
+        <form action="" class="my-3">
+
+          <div class="d-flex align-items-center">
+            <h4>Room 2:</h4>
+            <div class="btn btn-primary m-4">Add</div>
+          </div>
+          <div class="table-responsive ">
+
+           
+  
+         
+              <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>S.no</th>                     
+                        <th>Room Id</th>
+                        <th>Rate Type</th>
+                        <th>Adult</th>
+                        <th>Child</th>
+                         <th>Rate(Rs)</th>
+                         <th>Status</th>
+                         <th>Action</th>                     
+                      </tr>
+                    </thead>
+  
+  
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                    </tbody>
+  
+              </table>
+            
+           </div>
+
+           <button class="btn btn-primary">Save</button>
+        </form>
+
+        <form action="" class="my-3">
+
+          <div class="d-flex align-items-center">
+            <h4>Room 3:</h4>
+            <div class="btn btn-primary m-4">Add</div>
+          </div>
+          <div class="table-responsive ">
+
+           
+  
+         
+              <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>S.no</th>                     
+                        <th>Room Id</th>
+                        <th>Rate Type</th>
+                        <th>Adult</th>
+                        <th>Child</th>
+                         <th>Rate(Rs)</th>
+                         <th>Status</th>
+                         <th>Action</th>                     
+                      </tr>
+                    </thead>
+  
+  
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                    </tbody>
+  
+              </table>
+            
+           </div>
+
+           <button class="btn btn-primary">Save</button>
+        </form>
+
+        <form action="" class="my-3">
+
+          <div class="d-flex align-items-center">
+            <h4>Room 4:</h4>
+            <div class="btn btn-primary m-4">Add</div>
+          </div>
+          <div class="table-responsive ">
+
+           
+  
+         
+              <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>S.no</th>                     
+                        <th>Room Id</th>
+                        <th>Rate Type</th>
+                        <th>Adult</th>
+                        <th>Child</th>
+                         <th>Rate(Rs)</th>
+                         <th>Status</th>
+                         <th>Action</th>                     
+                      </tr>
+                    </thead>
+  
+  
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><input type="text" name="room id" class="form-control" value="101"></td>
+                        <td>  <select class="form-select" name="room-type" id="room-type">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </td>
+  
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td><input type="number" name="room id" class="form-control" value="101"></td>
+                      <td>
+                        <select class="form-select" name="room-type" id="room-type">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </td>
+  
+                    <td><button class="btn btn-success">Update</button></td>
+  
+                      </tr>
+                    </tbody>
+  
+              </table>
+            
+           </div>
+
+           <button class="btn btn-primary">Save</button>
+        </form>
+
+      </div>
+
+<div class="item">
+  <form action="#" class="form form-vertical">
+    <h4>Service Type & Price</h4>
+   
+
+    <div class="mb-3 mt-3">
+      
+
+        <div class="d-flex">
+        <div>
+          <label for="" class="form-label">Name</label>
+          <input type="text" class="form-control" id="check-in-date" name="check-in-date"> 
+        </div>
+        <div>
+          <label for="" class="form-label">Rate</label>
+          <input type="text" class="form-control" id="check-in-date" name="check-in-date"> 
+        </div>
+        </div>
+     
+      </div>
+
+
+      <div class="mb-3 mt-3 ">
+
+        <div class="btn btn-primary m-2">Add New</div>
+        
+        <button type="submit" class="btn btn-primary">Update</button>
+       
+      </div>
+
+</form>
+</div>
+
+
+     </div>
+
+
+
+  </div>
+</div>
+
+  </main>
+
+
+<!-- scripts -->
+
+<script src="assets/js/template.js"></script>
+
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

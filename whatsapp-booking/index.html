@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div class="whatsappformtab">
+        <div class="whatsappform-container">
+            <ul class="tabs">
+                <li class="active">Local Cab</li>
+                <li>Outstation Cab</li>
+            </ul>
+
+            <div class="form">
+                <form class="whatsapp-book-form">
+                    <h2 >Book On Whatsapp</h2>
+                    <label for="cabtype">Cab Type</label>
+                    <select name="cartype" id="cabtype">
+                        <option value="Car">Car</option>
+                    </select>
+                    <label for="pickuplocation">Pick Up Location</label>
+                    <input type="text" placeholder="Pick-up location" name="pickuplocation" id="pickuplocation">
+                    <label for="droplocation">Drop Location</label>
+                    <input type="text" placeholder="Drop location" name="droplocation" id="droplocation">
+                    <input type="hidden" value="Local Cab" id="typeofcab">
+                    <label for="pickuptime">Pick Up Date & Time</label>
+                    <input type="datetime-local" placeholder="" name="pickuptime" id="pickuptime">
+                    <label for="droptime">Drop Date & Time</label>
+                    <input type="datetime-local" placeholder="" name="droptime" id="droptime">
+                    <button class="thm-btn">Book Now</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        let whatsappform = document.querySelector(".whatsappformtab .whatsapp-book-form");
+        let whatsappformtabs = document.querySelectorAll(".whatsappformtab .tabs li");
+        let typeofcab = document.querySelector(".whatsappformtab #typeofcab");
+
+        for(let i=0; i<whatsappformtabs.length; i++){
+            whatsappformtabs[i]?.addEventListener("click",()=>{
+
+                whatsappformtabsremove();
+
+                whatsappformtabs[i].classList.add("active");
+
+                typeofcab.value = whatsappformtabs[i].innerText;
+
+            });
+        }
+
+        function whatsappformtabsremove(){
+            
+        for(let i=0; i<whatsappformtabs.length; i++){
+            whatsappformtabs[i].classList.remove("active");
+        }
+
+        }
+
+        function whatsappFormDateValidation(){
+
+            let date = new Date();
+
+            let droptime = document.querySelector(".whatsappformtab #droptime");
+            let pickuptime = document.querySelector(".whatsappformtab #pickuptime");
+
+            picktime = new Date(pickuptime.value);
+
+            droptime = new Date(droptime.value);  
+
+            if(date <= picktime && picktime < droptime){
+             return true;
+            }
+
+            else{
+             return false;
+            }
+
+            
+        }
+
+
+        whatsappform?.addEventListener("submit",(e)=>{
+
+            let wnumber = "9739853977";
+
+            e.preventDefault();
+
+            let valid = whatsappFormDateValidation();
+
+            
+           let typeofcab = document.querySelector(".whatsappformtab #typeofcab").value;
+           let cabtype = document.querySelector(".whatsappformtab #cabtype").value;
+           let pickuplocation = document.querySelector(".whatsappformtab #pickuplocation").value;
+           let droplocation = document.querySelector(".whatsappformtab #droplocation").value;
+           let pickuptime = document.querySelector(".whatsappformtab #pickuptime").value;
+           let droptime = document.querySelector(".whatsappformtab #droptime").value;
+
+            if(valid){
+
+                let data = `https://api.whatsapp.com/send?phone=91${wnumber}&text=Hi,%0aI Wants to book *${typeofcab}*%0a*Car Type*: ${cabtype}%0a*Pick Up Location*: ${pickuplocation}%0a*Pick Up Date and Time*: ${pickuptime}%0a*Drop Location*: ${droplocation}%0a*Drop Time*: ${droptime}`;
+
+                window.open(data);
+              
+            }
+            else{
+                alert("Please Enter Valid Date");
+            }
+
+        });
+
+    </script>
+
+
+</body>
+</html>

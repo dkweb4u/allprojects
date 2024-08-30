@@ -221,7 +221,7 @@ display: flex;
 
 
 <script>
-    let chatbotContainer = document.querySelector(" .whatsapp-chatbot-container");
+     let chatbotContainer = document.querySelector(" .whatsapp-chatbot-container");
     let chatbotbox = document.querySelector(" .whatsapp-chatbot-container .whatsapp-box");
     let chatbotopen = document.querySelector(" .whatsapp-chatbot-container .open-btn");
     let chatbotclose = document.querySelector(" .whatsapp-chatbot-container .close-btn");
@@ -229,11 +229,30 @@ display: flex;
     let chatbotform = document.querySelector(" .whatsapp-chatbot-container .formchatbot");
     let ctime = document.querySelector(" .whatsapp-chatbot-container .ctime");
 
+    function getwpchatbotTime(){
+        let date = new Date(); 
+		
+        let hour = date.getHours();
+		
+        let minite = date.getMinutes();
 
+        if(hour > 12){
+            hour = hour - 12;
+        }
+
+        if(hour < 10){
+            hour = "0"+ hour.toString();
+        }
+
+        if(minite < 10){
+            minite = "0"+ minite.toString();
+        }
+
+        ctime.textContent = hour + ":" + minite;
+    }
 
 
     chatbotopen.addEventListener("click",()=>{
-        let date = new Date();
         chatbotContainer.classList.add("active");
         chatbotbox.classList.add("active");
         chatbotmessageinput.focus();
@@ -263,30 +282,14 @@ display: flex;
             chatbotbox.classList.remove("active");
         }
 
+        else{
+            chatbotContainer.classList.add("active");
+            chatbotbox.classList.add("active");  
+        }
+
         getwpchatbotTime();
 
     });
-
-    function getwpchatbotTime(){
-
-        let hour = date.getHours();
-        let minite = date.getMinutes();
-
-        if(hour > 12){
-            hour = hour - 12;
-        }
-
-        if(hour < 10){
-            hour = "0"+ hour.toString();
-        }
-
-        if(minite < 10){
-            minite = "0"+ minite.toString();
-        }
-
-        ctime.textContent = hour + ":" + minite;
-    }
-    
 
 </script>
 
