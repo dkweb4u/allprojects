@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTaxiBooking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="whatsappform">
+    <div class="formbox">
+        
+        <div class="service-tabs">
+            <ul id="whatsapp-booking-tab"></ul>
+        </div>
+
+
+        <div id="bookingformContent">
+
+            <div class="subtabs"></div>
+
+            <div class="forms">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="template.js"></script>
+    <script>
+
+let booking = new Booking;
+
+let whatsappbookingTabs = document.querySelector(".whatsappform #whatsapp-booking-tab");
+let bookingformContent = document.querySelector(".whatsappform #bookingformContent");
+let subtabsHtml = document.querySelector(".whatsappform #bookingformContent .subtabs");
+let formsHtml = document.querySelector(".whatsappform #bookingformContent .forms");
+
+let onwaytab = 0;
+
+
+window.addEventListener("load",()=>{
+
+    // booking tabs
+    
+    let bookingtabs = Object.keys(booking.tabs);
+ 
+    bookingtabs.forEach((tab ,i) => {
+    let li = document.createElement("li");
+
+    li.setAttribute("onclick","triggerForm('"+booking.tabs[tab]+"')");
+    li.setAttribute("id",booking.tabs[tab]);
+
+    if(i==0){
+        li.classList.add("active");
+    }
+
+    li.innerText = tab;
+    whatsappbookingTabs.appendChild(li);
+  });
+
+  bookingFormFunction("outsationBookForm");
+
+
+});
+
+
+function triggerForm(bttab){
+
+    removeAllTabActive();
+
+    document.querySelector("#"+bttab).classList.add("active");
+
+    bookingFormFunction(bttab);
+
+}
+
+function triggerSubForm(event){
+
+    onwaytab = event.target.getAttribute("val");
+
+    if(document.querySelector(".whatsappform .service-tabs ul li.active")){
+        bookingFormFunction(document.querySelector(".whatsappform .service-tabs ul li.active").getAttribute("id"));
+    }
+
+}
+
+function removeAllTabActive(){
+    let elaments = document.querySelectorAll("#whatsapp-booking-tab li");
+    elaments.forEach(ele=>{
+        ele.classList.remove("active");
+    });
+}
+
+function removeSubtabActive(){
+    let elaments = document.querySelectorAll("#whatsapp-booking-tab li");
+    elaments.forEach(ele=>{
+        ele.classList.remove("active");
+    });
+}
+
+
+function bookingFormFunction(bttab){
+
+    formsHtml.innerHTML="";
+    subtabsHtml.innerHTML="";
+    
+//   booking forms
+
+   let form = bttab;
+
+   let subtabs ='';
+
+form = booking[form]();
+
+if(form.inputs){
+ form = form.inputs;
+}
+else{
+
+ subtabs= Object.keys(form);
+
+ subtabs.forEach((tab,i)=>{
+
+     let li = document.createElement("li");
+     li.innerText = tab;
+     li.setAttribute("onclick","triggerSubForm(event)");
+     li.setAttribute("val",i);
+
+     if(i== onwaytab){
+         li.classList.add("active");
+     }
+
+     subtabsHtml.appendChild(li); 
+
+ });
+
+ form = form[subtabs[onwaytab]].inputs;
+ 
+}
+
+// create form
+
+let formElement = document.createElement("form");
+
+// hidden input
+if(document.querySelector(".whatsappform .service-tabs ul li.active")){
+ let hideinput = document.createElement("input");
+ hideinput.setAttribute("name","Cab type");
+ hideinput.setAttribute("type","hidden");
+ hideinput.setAttribute("value",document.querySelector(".whatsappform .service-tabs ul li.active").innerText);
+ formElement.appendChild(hideinput);
+}
+
+ 
+if(document.querySelector(".whatsappform  .subtabs li.active")){
+ let hidesubinput = document.createElement("input");
+ hidesubinput.setAttribute("name","Sub category");
+ hidesubinput.setAttribute("type","hidden");
+ hidesubinput.setAttribute("value",document.querySelector(".whatsappform  .subtabs li.active").innerText);
+ formElement.appendChild(hidesubinput);
+}
+
+//  ====================================================================
+
+
+
+
+let container =document.createElement("div");
+container.classList.add("containerdiv");
+
+
+//  create form div
+
+form.forEach((inputs,i)=>{
+
+ let formDivElement = document.createElement("div");
+
+ formDivElement.classList.add("formdiv");
+
+ if(inputs.duplicate){
+    formDivElement.setAttribute("id","canDuplicate");
+    let span = document.createElement("span");
+    span.setAttribute("class","plus-icon");
+    span.innerText= "+";
+    formDivElement.appendChild(span);
+ }
+
+
+ let label,input,select,option;
+
+switch (inputs.tag) {
+ case "input":
+
+ // label
+ label= document.createElement("label");
+ label.innerText = inputs.name;
+
+ // input
+ input = document.createElement(inputs.tag);
+ input.setAttribute("name",inputs.name);
+ input.setAttribute("type",inputs.type);
+ input.setAttribute("required","required");
+
+ if(inputs.type == "date"){        
+     input.setAttribute("min",booking.filterDate());
+ }
+
+ formDivElement.appendChild(label);
+ formDivElement.appendChild(input);
+     
+     break;
+
+case "select":
+
+ // label
+ label = document.createElement("label");
+ label.innerText = inputs.name;
+
+ // select
+ select = document.createElement(inputs.tag);
+ select.setAttribute("name",inputs.name);
+ select.setAttribute("type",inputs.type);
+
+ // options
+
+
+ inputs.options.forEach(optiondata => {
+ option = document.createElement("option");
+ option.setAttribute("value",optiondata);
+ option.innerText = optiondata;
+ select.appendChild(option);
+
+ });
+
+
+ formDivElement.appendChild(label);
+ formDivElement.appendChild(select);
+     
+     break;
+
+ default:
+     break;
+}
+container.appendChild(formDivElement);
+});
+
+let button = document.createElement('button');
+ button.setAttribute("type","submit");
+ button.innerText = "Book Now";
+
+formElement.appendChild(container);
+
+formElement.appendChild(button);
+
+formsHtml.appendChild(formElement);
+
+formSubmitfunction();
+
+addDuplicateform();
+
+}
+
+function formSubmitfunction(){
+if(document.querySelector(".whatsappform div#bookingformContent form")){
+
+let formsubmit = document.querySelector(".whatsappform div#bookingformContent form");
+
+formsubmit.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+let formdata = new FormData(formsubmit);
+
+booking.getAllEntrysForm(formdata);
+
+});
+
+
+}
+
+}
+
+function addDuplicateform(){
+
+  if(document.querySelectorAll('.whatsappform #canDuplicate').length > 0){
+    let duplicatedivs = document.querySelectorAll('.whatsappform #canDuplicate');
+    duplicatedivs.forEach((div,i) => {
+
+        let span = div.querySelector("span.plus-icon");
+
+        span.addEventListener("click",()=>{
+           let oldinputs = duplicatedivs[i].querySelectorAll("input");
+            oldinput =  oldinputs[0].getAttribute("name");
+
+            let input = document.createElement("input");
+            input.setAttribute("name",oldinput);  
+            
+            duplicatedivs[i].appendChild(input);
+
+        })
+        
+    });
+  }
+
+
+}
+
+
+
+    </script>
+    
+
+</body>
+</html>

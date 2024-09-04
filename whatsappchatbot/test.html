@@ -25,31 +25,153 @@
 
 </head>
 <body>
-    <div class="demo"></div>
+
+
+
+
+
+
+
+    <div class="home-box">
+       <div class="left">
+        <h2>Taxi services in Bangalore with Shiva Shree Cabs</h2>
+       </div>
+        <div class="right">
+            <h4>Book your ride in seconds</h4>
+            <div class="double-btns"><a href="tel:8904235568" class="thm-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z"></path></svg><span>8904235568</span>
+            </a>
+            <a href="/contact-us" class="thm-btn">
+            <span>Book Now</span>
+            </a>
+        </div>
+        </div>
+
+        </div>
+
+
+
+
 
     <script>
-        let demo = document.querySelector(".demo");
-
-for(let i=0; i<100; i++){
 
 
-    let k = 99-i;
 
-    let star = "";
+let whatsappform = document.querySelector(".whatsappformtab .whatsapp-book-form");
+        let whatsappformtabs = document.querySelectorAll(".whatsappformtab .tabs li");
+        let dropmagic = document.querySelectorAll(".whatsappformtab .form form .dropmagic");
 
-    for(let j=k; j<100; j++){
+        
+        let typeofcab = document.querySelector(".whatsappformtab #typeofcab");
 
-        star += "*";
+        for(let i=0; i<whatsappformtabs.length; i++){
+            whatsappformtabs[i]?.addEventListener("click",()=>{
 
-    }
+                whatsappformtabsremove();
 
-    demo.innerHTML += `<p>${star}</p>`;
+                whatsappformtabs[i].classList.add("active");
 
-    console.log(  demo);
 
-}
+                if(whatsappformtabs[i].innerText =="Airport Cab"  ){
+                    dropmagic.classList.add("active");
+                }
+
+                else{
+                    dropmagic.classList.remove("active");
+                }
+
+
+                typeofcab.value = whatsappformtabs[i].innerText;
+
+
+            });
+        }
+
+        function whatsappformtabsremove(){
+            
+        for(let i=0; i<whatsappformtabs.length; i++){
+            whatsappformtabs[i].classList.remove("active");
+        }
+
+        }
+
+        function whatsappFormDateValidation(){
+
+            let date = new Date();
+
+            let droptime = document.querySelector(".whatsappformtab #droptime");
+            let pickuptime = document.querySelector(".whatsappformtab #pickuptime");
+
+            picktime = new Date(pickuptime.value);
+
+            droptime = new Date(droptime.value);  
+
+            if(date <= picktime && picktime < droptime){
+             return true;
+            }
+
+            else{
+             return false;
+            }
+
+            
+        }
+
+        whatsappform?.addEventListener("submit",(e)=>{
+
+            let wnumber = "8904235568";
+
+            e.preventDefault();
+
+            let valid;
+
+                        
+           let typeofcab = document.querySelector(".whatsappformtab #typeofcab").value;
+           let cabtype = document.querySelector(".whatsappformtab #cabtype").value;
+           let pickuplocation = document.querySelector(".whatsappformtab #pickuplocation").value;
+           let droplocation = document.querySelector(".whatsappformtab #droplocation").value;
+           let pickuptime = document.querySelector(".whatsappformtab #pickuptime").value;
+           let droptime = document.querySelector(".whatsappformtab #droptime").value;
+
+            if(document.querySelector(".whatsappformtab .tabs li.active") != "Airport Cab"){
+                valid = whatsappFormDateValidation();
+            }
+            else{
+                 valid = true;
+            }
+
+           
+
+
+
+            if(valid){
+
+                if(document.querySelector(".whatsappformtab .tabs li.active") != "Airport Cab"){
+                    let data = `https://api.whatsapp.com/send?phone=91${wnumber}&text=Hi,%0aI Wants to book *${typeofcab}*%0a*Car Type*: ${cabtype}%0a*Pick Up Location*: ${pickuplocation}%0a*Pick Up Date and Time*: ${pickuptime}%0a*Drop Location*: ${droplocation}%0a*Drop Time*: ${droptime}`;
+
+                }
+
+                else{
+                    let data = `https://api.whatsapp.com/send?phone=91${wnumber}&text=Hi,%0aI Wants to book *${typeofcab}*%0a*Car Type*: ${cabtype}%0a*Pick Up Location*: ${pickuplocation}%0a*Pick Up Date and Time*: ${pickuptime}%0a*Drop Location*: ${droplocation}%0a`;
+
+                }
+
+               
+                window.open(data);
+              
+            }
+            else{
+                alert("Please Enter Valid Date and Time");
+            }
+
+        });
+
+
+
 
     </script>
+  
+
 
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+    <label for="browser">Choose your browser from the list:</label>
+    <input list="browsers" name="browser" id="browser" />
+
+    <datalist id="browsers">
+    </datalist>
+
+    <script>
+      let input = document.querySelector("#browser");
+      let options = document.querySelector("#browsers");
+
+      input.addEventListener("input", ()=> {
+
+        url = `https://api.olamaps.io/places/v1/autocomplete?input=${input.value}&api_key=pHWRBpUJGPVHk9kcSg9IlWZxq6UjjHCgnfVLGP7p`;
+
+        fetch(url, {
+          header: {
+            "X-Request-Id": "0da18243-6514-4436-a23c-1cd6be23ce00",
+          },
+        })
+          .then((responce) => responce.json())
+          .then((data) => newdataList(data.predictions));
+      });
+
+      function newdataList(datas){
+        options.innerHTML ="";
+        datas.forEach(data => {
+            let optiontag = document.createElement("option");
+            optiontag.setAttribute("value",data.structured_formatting.main_text);
+
+            options.appendChild(optiontag);
+
+        });
+
+
+      }
+
+
+    </script>
+  </body>
+</html>
