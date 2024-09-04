@@ -35,7 +35,6 @@
     <script>
 
 let booking = new Booking;
-
 let whatsappbookingTabs = document.querySelector(".whatsappform #whatsapp-booking-tab");
 let bookingformContent = document.querySelector(".whatsappform #bookingformContent");
 let subtabsHtml = document.querySelector(".whatsappform #bookingformContent .subtabs");
@@ -195,6 +194,8 @@ form.forEach((inputs,i)=>{
  let label,input,select,option;
 
 switch (inputs.tag) {
+
+
  case "input":
 
  // label
@@ -215,6 +216,32 @@ switch (inputs.tag) {
  formDivElement.appendChild(input);
      
      break;
+
+case "datalist":
+
+let number = Math.floor(Math.random()*100);
+
+// label
+label= document.createElement("label");
+label.innerText = inputs.name;
+
+// input
+input = document.createElement("input");
+input.setAttribute("name",inputs.name);
+input.setAttribute("type",inputs.type);
+input.setAttribute("required","required");
+input.setAttribute("oninput","getplaces(event)");
+input.setAttribute("list",inputs.name+number);
+
+// datalist
+datalist = document.createElement(inputs.tag);
+datalist.setAttribute("id",inputs.name+number);
+
+formDivElement.appendChild(label);
+formDivElement.appendChild(input);
+formDivElement.appendChild(datalist);
+    
+    break;
 
 case "select":
 
@@ -295,13 +322,23 @@ function addDuplicateform(){
         let span = div.querySelector("span.plus-icon");
 
         span.addEventListener("click",()=>{
+            let number = Math.floor(Math.random()*100);
+
            let oldinputs = duplicatedivs[i].querySelectorAll("input");
             oldinput =  oldinputs[0].getAttribute("name");
 
             let input = document.createElement("input");
             input.setAttribute("name",oldinput);  
+            input.setAttribute("list",oldinput+number);  
+            input.setAttribute("oninput","getplaces(event)");  
+
+            let datalist = document.createElement("datalist");
+            datalist.setAttribute("id",oldinput+number);  
+          
+
             
             duplicatedivs[i].appendChild(input);
+            duplicatedivs[i].appendChild(datalist);
 
         })
         
@@ -310,6 +347,83 @@ function addDuplicateform(){
 
 
 }
+
+
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+
+
+function getplaces(event){
+
+// url = `https://api.olamaps.io/places/v1/autocomplete?input=${event.target.value}&api_key=pHWRBpUJGPVHk9kcSg9IlWZxq6UjjHCgnfVLGP7p`;
+
+//   url = `https://api.olamaps.io/places/v1/autocomplete?input=${event.target.value}&api_key=4j3AxfJIGNdOndQb1BIlm5eYOdYkrA3IrsRvE36q`;
+
+
+
+  url = `https://api.olamaps.io/places/v1/reverse-geocode?latlng=12.923946516889448,77.5526110768168&api_key=4j3AxfJIGNdOndQb1BIlm5eYOdYkrA3IrsRvE36q`;
+
+
+
+fetch(url, {
+  header: {
+    // "X-Request-Id": "0da18243-6514-4436-a23c-1cd6be23ce00",
+    "X-Request-Id": "1e9cbd8d-27ab-4d95-978b-bf58fe9b6aff",
+
+  },
+})
+  .then((responce) => responce.json())
+  .then((data) => newdataList(data.predictions,event.target.getAttribute("list")));
+}
+
+
+      function newdataList(datas,id){
+    
+  document.querySelector("#"+id).innerHTML ="";
+        datas.forEach(data => {
+            let optiontag = document.createElement("option");
+            optiontag.setAttribute("value",data.structured_formatting.main_text);
+
+            document.querySelector("#"+id).appendChild(optiontag);
+
+        });
+
+
+}
+
+
+window.addEventListener("load",()=>{
+
+    navigator.geolocation.getCurrentPosition(showPosition);
+
+    function showPosition(position) {
+        let lat= position.coords.latitude;
+        let lng = position.coords.longitude;
+
+        url = `https://api.olamaps.io/places/v1/reverse-geocode?latlng=${lat},${lng}&api_key=4j3AxfJIGNdOndQb1BIlm5eYOdYkrA3IrsRvE36q`;
+
+
+
+fetch(url, {
+  header: {
+    "X-Request-Id": "1e9cbd8d-27ab-4d95-978b-bf58fe9b6aff",
+
+  },
+})
+  .then((responce) => responce.json())
+  .then((data) => console.log(data));
+}
+
+
+})
 
 
 

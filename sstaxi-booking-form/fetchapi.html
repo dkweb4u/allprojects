@@ -9,34 +9,35 @@
 
 
     <label for="browser">Choose your browser from the list:</label>
-    <input list="browsers" name="browser" id="browser" />
+    <input list="browsers" name="browser" oninput="getplaces(event)" />
 
     <datalist id="browsers"></datalist>
 
     <script>
-      let input = document.querySelector("#browser");
-      let options = document.querySelector("#browsers");
 
-      input.addEventListener("input", ()=> {
 
-        url = `https://api.olamaps.io/places/v1/autocomplete?input=${input.value}&api_key=pHWRBpUJGPVHk9kcSg9IlWZxq6UjjHCgnfVLGP7p`;
+    function getplaces(event){
 
-        fetch(url, {
-          header: {
-            "X-Request-Id": "0da18243-6514-4436-a23c-1cd6be23ce00",
-          },
-        })
-          .then((responce) => responce.json())
-          .then((data) => newdataList(data.predictions));
-      });
+url = `https://api.olamaps.io/places/v1/autocomplete?input=${event.target.value}&api_key=pHWRBpUJGPVHk9kcSg9IlWZxq6UjjHCgnfVLGP7p`;
 
-      function newdataList(datas){
-        options.innerHTML ="";
+fetch(url, {
+  header: {
+    "X-Request-Id": "0da18243-6514-4436-a23c-1cd6be23ce00",
+  },
+})
+  .then((responce) => responce.json())
+  .then((data) => newdataList(data.predictions,event.target.getAttribute("list")));
+}
+
+
+      function newdataList(datas,id){
+    
+  document.querySelector("#"+id).innerHTML ="";
         datas.forEach(data => {
             let optiontag = document.createElement("option");
             optiontag.setAttribute("value",data.structured_formatting.main_text);
 
-            options.appendChild(optiontag);
+            document.querySelector("#"+id).appendChild(optiontag);
 
         });
 

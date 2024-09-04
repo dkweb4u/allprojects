@@ -35,13 +35,14 @@ class Booking{
                 "type":"text",
                 "options":this.vechileTypes
             },
+
             {
-                "tag":"input",
+                "tag":"datalist",
                 "name":"From",
                 "type":"text"
             },
             {
-                "tag":"input",
+                "tag":"datalist",
                 "name":"To",
                 "type":"text"
             },
@@ -68,12 +69,12 @@ class Booking{
                     "options":this.vechileTypes
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"From",
                     "type":"text"
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"To",
                     "type":"text",
                     "duplicate":true
@@ -118,7 +119,7 @@ class Booking{
             {
             "name":"City",
             "type":"text",
-            "tag":"input"
+            "tag":"datalist"
         },
          {
             "name":"Pick up Date",
@@ -143,12 +144,12 @@ class Booking{
                     "options":this.vechileTypes
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"Pickup Airport",
                     "type":"text"
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"Drop Address",
                     "type":"text"
                 },
@@ -172,12 +173,12 @@ class Booking{
                     "options":this.vechileTypes
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"Pickup Address",
                     "type":"text"
                 },
                 {
-                    "tag":"input",
+                    "tag":"datalist",
                     "name":"Drop Airport",
                     "type":"text"
                 },
@@ -210,7 +211,7 @@ class Booking{
                         "type":"number"
                     },
                     {
-                        "tag":"input",
+                        "tag":"datalist",
                         "name":"pickup address",
                         "type":"text"
                     },
