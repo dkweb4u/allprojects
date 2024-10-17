@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+url = `https://api.olamaps.io/places/v1/details&api_key=4j3AxfJIGNdOndQb1BIlm5eYOdYkrA3IrsRvE36q`;
+
+fetch(url, {
+  header: {
+    // "X-Request-Id": "0da18243-6514-4436-a23c-1cd6be23ce00",
+    "X-Request-Id": "1e9cbd8d-27ab-4d95-978b-bf58fe9b6aff",
+
+  },
+})
+  .then((responce) => responce.json())
+  .then((data) => console.log(data));
+    </script>
+
+</body>
+</html>

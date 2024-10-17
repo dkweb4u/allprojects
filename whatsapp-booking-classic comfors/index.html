@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.booking-form{
+	display: flex;
+	flex-flow: column;
+	max-width: 300px;
+	width: 100%;
+	padding: 20px;
+	background: #fff;
+	margin: auto;
+	box-shadow: 1px 1px 6px #0006;
+	border-radius: 10px;
+}
+.booking-form label{
+	display: flex;
+	width: 100%;
+	flex-flow: column;
+	margin: 5px auto;
+}
+.booking-form select#roomtype,
+.booking-form input{
+    border: 1px solid #0005;
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    min-height: 25px;
+}
+.booking-form label span{
+	color: #000;
+	font-weight: 500;
+}
+.booking-form a.thm-btn.wp{
+	background: #0dc042;
+	padding: 6px 15px;
+	display: flex;
+	width: fit-content;
+	margin: 10px auto auto;
+	color: #fff;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.booking-form img{
+	min-width: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+.booking-form  a .et_pb_module.et_pb_icon.et_pb_icon_0{
+	margin: 0 !important;
+}
+</style>
+<body>
+    
+
+
+    <div class="booking-form">
+        <label for="checkin"><span>Room Type </span> 
+               <select id="roomtype" class="form-select">
+                 <option value="Economy Room">Economy Room</option>
+                 <option value="Standard Room">Standard Room</option>
+                 <option value="Deluxe Rooms">Deluxe Rooms</option>
+                 <option value="Suite Room">Suite Room</option>
+     
+               </select>
+               </label>
+                 <label for="checkin"><span>Check-In</span> <input type="date" id="checkin"></label>
+                 <label><span>Check-Out</span> <input type="date" id="checkout"></label>
+                 <label><span>Adults</span>
+                   <input type="number" min="1" max="10" value="1" id="adult"></label>
+                 <label><span>Children</span>
+                   <input type="number" min="0" max="10" value="0" id="child"></label>
+       
+       <div class="btn">
+         <a class="thm-btn wp">
+     <img src="https://www.classiccomforts.in/wp-content/uploads/2024/07/whatsapp.png" />
+           <span>Book Now</span></a>
+       </div>
+               
+               </div>
+
+
+
+
+
+
+    <script>
+
+
+let whatsapplink = document.querySelector(".booking-form a.wp");
+
+whatsapplink?.addEventListener("click", ()=>{
+	console.log("clicked form");
+let roomtype = document.querySelector(".booking-form #roomtype").value;
+let checkin = document.querySelector(".booking-form #checkin").value;
+let checkout = document.querySelector(".booking-form #checkout").value;
+let adult = document.querySelector(".booking-form  #adult").value;
+let children = document.querySelector(".booking-form  #child").value;
+
+let wnumber = "8147391252";
+
+// today date
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy+ '-' + mm + '-'  + dd ;
+// today date
+
+if(checkin ==''){
+  checkin = today;
+}
+
+if(checkout ==''){
+  checkout = today;
+}
+
+if(checkin <= checkout && today<= checkin){
+  let data = `https://api.whatsapp.com/send?phone=91${wnumber}&text=Hi,%0aI Wants to book ${roomtype}%0aCheck In: ${checkin}%0aCheck Out: ${checkout}%0aAdult: ${adult}%0aChildren: ${children}`;
+  window.open(data);
+
+}
+else{
+ alert("Please Select valid check out date!");
+}
+
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+}
+.property-details{
+    margin: 30px auto;
+}
+.property-details .key-info{
+    padding: 10px;
+    border-bottom:  1px solid #0005;
+}
+.property-details .key-info h4{
+    font-size: 18px;
+}
+.property-details .table{
+    border: 1px solid #0008;
+    text-align: center;
+}
+.property-details .table td,
+.property-details .table th{
+    border: 1px solid #0008;
+    font-size: 16px;
+    font-weight: 500;
+}
+.property-details .table th{
+    background: #0b5ed7;
+    color: #fff;
+}
+.property-details .key-info p{
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.property-details .amenites .key-info h4,
+.property-details .maintype .key-info h4,
+.property-details .foods .key-info h4{
+  color: #0b5ed7;
+}
+.property-details .foods .key-info p{
+    text-transform: capitalize;
+}
