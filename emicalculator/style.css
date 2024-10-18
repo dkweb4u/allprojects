@@ -1,0 +1,57 @@
+*{
+    --thm-clr: #e09900;
+}
+.emiquoteform {
+    padding: 15px;
+    box-shadow: 1px 1px 6px #0002;
+}
+.emiquoteform .step{
+    background: var(--thm-clr);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: #fff;
+}
+.emiquoteform .num{
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    margin-right: 10px;
+}
+.emiquoteform .text h2{
+    margin: 0px;
+}
+.emiquoteform .text p{
+    margin: 5px 0px 0px;
+}
+.emiquoteform  .form-row{
+display: flex;
+flex-wrap: wrap;
+}
+.emiquoteform .form-col{
+    display: flex;
+    flex-flow: column;
+    max-width: 250px;
+    width: 100%;
+    margin: 10px;
+}
+.emiquoteform .form-col span{
+    color: #ff0000;
+}
+.emiquoteform button{
+    padding: 6px 15px;
+    background: var(--thm-clr);
+    outline: none;
+    border-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}

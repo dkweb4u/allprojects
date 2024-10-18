@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form action="" class="emiquoteform">
+        <div class="step">
+            <div class="num">1</div> <div class="text">
+                <h2>Construction Area & Cost Calculator</h2>
+                <p>Fill the below fields to calculate the allowed / desired construction area</p>
+            </div> 
+        </div>
+        <div class="form-row">
+            <div class="form-col">
+                <label for="">Land Area *</label>
+                <input type="text" name="Land Area" placeholder="SFT" required>
+                <span>Minimum area required is 1000 SFT</span>
+            </div>
+            <div class="form-col">
+                <label for="">Road Width *</label>
+                <select name="Road Width" id=""  required>
+                    <option value="">Select</option>
+                    <option value="30 Feet">30 Feet</option>
+                    <option value="40 Feet">40 Feet</option>
+                </select>
+            </div>
+            <div class="form-col">
+                <label for="">Number of Floors *</label>
+                <select name="Number of Floors" id=""  required>
+                    <option value="">Select</option>
+                    <option value="Ground">Ground</option>
+                    <option value="Ground + 1">Ground + 1</option>
+                    <option value="Ground + 2">Ground + 2</option>
+                    <option value="Ground + 3">Ground + 3</option>
+                    <option value="Ground + 4">Ground + 4</option>
+
+                </select>
+            </div>
+            <div class="form-col">
+                <label for="">Select Package *</label>
+                <select name="Select Package" id=""  required>
+                    <option value="">Select</option>
+                    <option value="Essential - Bangalore">Essential - Bangalore</option>
+                    <option value="Classic - Bangalore">Classic - Bangalore</option>
+                    <option value="Premium- Bangalore">Premium- Bangalore</option>
+                    <option value="Ultimate - Bangalore">Ultimate - Bangalore</option>
+                    <option value="Essential - Chennai">Essential - Chennai</option>
+                    <option value="Premium - Chennai">Premium - Chennai</option>
+                    <option value="Farm House">Farm House</option>
+                 </select>
+            </div>
+
+            <div class="form-col">
+                <label for="">Site Location</label>
+                <input type="text" name="Site Location">
+            </div>
+
+
+
+        </div>
+        <div class="step">
+            <div class="num">2</div> <div class="text">
+                <h2>EMI Calculator</h2>
+                <p>Fill the below fields to calculate EMI on the loan amount</p>
+            </div> 
+        </div>
+
+        <div class="form-row">
+            <div class="form-col">
+                <label for="">Down Payment</label>
+                <select name="Down Payment" id="">
+                    <option value="">Select</option>
+                    <option value="20% of Project Cost">20% of Project Cost</option>
+                    <option value="30% of Project Cost">30% of Project Cost</option>
+                    <option value="40% of Project Cost">40% of Project Cost</option>
+                    <option value="50% of Project Cost">50% of Project Cost</option>
+                </select>
+            </div>
+            <div class="form-col">
+                <label for="">Rate of Interest %</label>
+                <input type="text" name="Rate of Interest" placeholder="% Your Bank Charges">
+            </div>
+            <div class="form-col">
+                <label for="">Loan Tenure</label>
+                <select name="Loan Tenure" id="">
+                    <option value="">Select Tenure</option>
+                    <option value="10 Years">10 Years</option>
+                    <option value="15 Years">15 Years</option>
+                    <option value="20 Years">20 Years</option>
+                    <option value="25 Years">25 Years</option>
+                 </select>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="num">3</div> <div class="text">
+                <h2>Personal Details</h2>
+                <p>Please share your contact details for us to send you the calculated information</p>
+            </div> 
+        </div>
+
+        <div class="form-row">
+            <div class="form-col">
+                <label for="">Name *</label>
+                <input type="text" name="Name" placeholder="Enter Your Name"  required>
+            </div>
+            <div class="form-col">
+                <label for="">Phone *</label>
+                <input type="text" name="Phone" placeholder="Enter Your Phone"  required>
+            </div>
+            <div class="form-col">
+                <label for="">Email *</label>
+                <input type="email" name="Email" placeholder="Enter Your Email"  required>
+            </div>
+          
+    
+        </div>
+        <div class="form-row">
+            <p>The quotation will be sent to your email. Please provide the correct email address and phone number to receive our detailed quotation.</p>
+        </div>
+        <button type="Submit" class="submit"> <div class="img"><img src="Submit" alt=""></div> <span>Submit</span></button>
+        <button type="reset" class="reset">Reset</button>
+     
+
+    </form>
+
+<script>
+    let quoteform = document.querySelector(".emiquoteform");
+    quoteform.addEventListener("submit",(e)=>{
+
+    let number = "9740428354";
+     
+let url = `https://api.whatsapp.com/send?phone=91${number}&text=Hi,%0aI Need Quote`;
+
+     e.preventDefault();
+
+     let formData = new FormData(quoteform);
+
+     for (const [name, value] of formData.entries()) {
+        url +=`%0a*${name}*: ${value}`;
+     }
+
+     window.open(url);
+
+    });
+</script>
+</body>
+</html>
